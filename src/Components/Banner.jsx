@@ -14,8 +14,6 @@ import 'swiper/css/scrollbar';
 import { Parallax, Pagination, Navigation, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 
 import slide1 from '../assets/slider/slide1.webp'
-import slide2 from '../assets/slider/slide2.jpg'
-import slide3 from '../assets/slider/slide3.jpg'
 import slide4 from '../assets/slider/slide4.avif'
 import slide5 from '../assets/slider/slide5.avif'
 // import slide3 from '../../assets/banner-posters/oppenheimer-poster.jpg'
