@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
 
+    const {user} = useContext(AuthContext)
+
     const links =
         <>
-            <li><Link>Home</Link></li>
-            <li><Link>Available Foods</Link></li>
-            {/* {
+            <li><Link to={'/'}>Home</Link></li>
+            <li><Link to={'/allfoods'}>Available Foods</Link></li>
+            {
                 user &&
                 <>
-                    <li><Link>Add Food</Link></li>
-                    <li><Link>Manage My Food</Link></li>
-                    <li><Link>My Food Request</Link></li>
+                    <li><Link to={'/addfood'}>Add Food</Link></li>
+                    <li><Link to={'/myfoods'}>Manage My Food</Link></li>
+                    <li><Link to={'/myrequests'}>My Food Request</Link></li>
                 </>
-            } */}
+            }
         </>
 
 
@@ -51,7 +54,28 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user ?
+                            <div className='flex'>
+                                <div className='flex group relative'>
+
+                                    <div className="btn btn-ghost btn-circle avatar">
+                                        <img className='w-full rounded-full'
+                                            alt="avatar"
+                                            src={user.photoURL} />
+                                    </div>
+
+                                    <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user.displayName}</div>
+
+                                </div>
+                                <Link onClick={handleSignOut} className="py-2 mx-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/10 hover:rounded-2xl">Sign Out</Link>
+                            </div>
+                            :
+                            <div className='text-white'>
+                                <Link to='/auth' className="py-2 px-4 border-r bg-[#E9B57C]  rounded-md hover:bg-[#E9B57C]/70 hover:rounded-l-2xl rounded-r-none">Login</Link>
+                                <Link to='/auth/register' className="py-2 px-4  bg-[#E9B57C] rounded-md hover:bg-[#E9B57C]/70 hover:rounded-r-2xl rounded-l-none">Register</Link>
+                            </div>
+                    }
                 </div>
             </div>
         </div>
