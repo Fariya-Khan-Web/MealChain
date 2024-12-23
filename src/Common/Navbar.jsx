@@ -23,13 +23,13 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 w-[96%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-4 w-4 "
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -46,7 +46,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <h1 className="text-2xl font-bold -ml-2">Meal<span className='text-[#E9B570]'>Chain</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -68,12 +68,12 @@ const Navbar = () => {
                                     <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user.displayName}</div>
 
                                 </div>
-                                <Link onClick={handleSignOut} className="py-2 mx-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/10 hover:rounded-2xl">Sign Out</Link>
+                                <Link onClick={handleSignOut} className="py-2 mx-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Sign Out</Link>
                             </div>
                             :
                             <div className='text-white'>
-                                <Link to='/auth' className="py-2 px-4 border-r bg-[#E9B57C]  rounded-md hover:bg-[#E9B57C]/70 hover:rounded-l-2xl rounded-r-none">Login</Link>
-                                <Link to='/auth/register' className="py-2 px-4  bg-[#E9B57C] rounded-md hover:bg-[#E9B57C]/70 hover:rounded-r-2xl rounded-l-none">Register</Link>
+                                <Link to='/auth' className="py-2 px-4 border-r bg-[#E9B57C]  rounded-md hover:bg-[#E9B57C]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
+                                <Link to='/auth/register' className="py-2 px-4  bg-[#E9B57C] rounded-md hover:bg-[#E9B57C]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
                             </div>
                     }
                 </div>
