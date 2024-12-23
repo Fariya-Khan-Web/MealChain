@@ -3,11 +3,12 @@ import { TbEyeglass, TbEyeglassOff } from 'react-icons/tb';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
 
 
-    const { setUser, loginGoogle } = useContext(AuthContext)
+    const { setUser, loginGoogle, createUser, updateUserProfile } = useContext(AuthContext)
     const [show, setShow] = useState(false)
 
     const location = useLocation()
@@ -22,19 +23,41 @@ const Register = () => {
         e.preventDefault()
 
         const form = new FormData(e.target)
+        const name = form.get('name')
         const email = form.get('email')
+        const photo = form.get('photo')
         const password = form.get('password')
 
-        loginUser(email, password)
+        console.log({name, email, photo, password})
+
+        const regex1 = /^.{6,}$/;
+
+        if (!regex1.test(password)) {
+            return toast.error('password must contain be at least 6 characters', { position: "top-center" });
+        }
+        if (!/[A-Z]/.test(password)) {
+            return toast.error('Must have an Uppercase letter in the password', { position: "top-center" });
+        }
+        if (!/[a-z]/.test(password)) {
+            return toast.error('Must have a Lowercase letter in the password', { position: "top-center" });
+        }
+
+        createUser(email, password)
             .then(result => {
                 setUser(result.user)
-                toast.success('Successfully created your account', { position: "top-center" })
-                // setLoading(false)
-                navigate(location?.state ? location?.state : '/')
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+
+                    })
+                    .catch(err => {
+
+                    })
+                toast.success('User created successfully', { position: "top-center" })
+                navigate('/')
             })
             .catch(err => {
                 console.log(err)
-                toast.error('Invalid email or password, try again', { position: "top-center" })
+                toast.error('Error', { position: "top-center" })
             })
 
     }
@@ -95,14 +118,14 @@ const Register = () => {
 
 
                     <div className="form-control mt-6">
-                        <button className="py-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Login</button>
+                        <button className="py-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Register</button>
                     </div>
                     <div onClick={handleShow} className='absolute bottom-[257px] right-12' >
                         {show ? <TbEyeglassOff /> : <TbEyeglass />}
                     </div>
                 </form>
                 <div className="divider mx-10 -mt-4">OR</div>
-                <button onClick={handleGoogle} className="p-2 w-[87%] mx-8  bg-[#E9B57C] rounded-md text-white hover:bg-[#E9B57C]/80 hover:rounded-2xl">Login With Google</button>
+                <button onClick={handleGoogle} className="p-2 w-[87%] mx-8  bg-[#E9B57C] rounded-md text-white hover:bg-[#E9B57C]/80 hover:rounded-2xl flex gap-2 justify-center items-center"><FaGoogle />Sign up With Google</button>
                 <p className='text-center my-4'>Already have an account? <Link to='/auth' className='hover:text-[#E9B57C] link'>Login</Link> now</p>
             </div>
         </div>
