@@ -15,6 +15,8 @@ import AddFood from './Layouts/AddFood.jsx';
 import MyFoods from './Layouts/MyFoods.jsx';
 import MyRequests from './Layouts/MyRequests.jsx';
 import Home from './Layouts/Home.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +65,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      <ToastContainer />
     </AuthProvider>
   </StrictMode>,
 )
