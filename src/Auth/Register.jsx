@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react';
 import { TbEyeglass, TbEyeglassOff } from 'react-icons/tb';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
 
-    const { } = useContext(AuthContext)
+    const { setUser, loginGoogle } = useContext(AuthContext)
     const [show, setShow] = useState(false)
 
     const location = useLocation()
@@ -27,11 +28,12 @@ const Register = () => {
         loginUser(email, password)
             .then(result => {
                 setUser(result.user)
-                toast.success('Logged in successfully', { position: "top-center" })
+                toast.success('Successfully created your account', { position: "top-center" })
                 // setLoading(false)
                 navigate(location?.state ? location?.state : '/')
             })
             .catch(err => {
+                console.log(err)
                 toast.error('Invalid email or password, try again', { position: "top-center" })
             })
 
@@ -47,6 +49,7 @@ const Register = () => {
 
             })
             .catch(err => {
+                console.log(err)
                 toast.error('Error, try again', { position: "top-center" })
             })
     }

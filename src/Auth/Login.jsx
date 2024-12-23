@@ -3,10 +3,11 @@ import pic from '../assets/auth/login.avif'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { TbEyeglass, TbEyeglassOff } from 'react-icons/tb';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
-    const { } = useContext(AuthContext)
+    const { setUser, loginGoogle } = useContext(AuthContext)
     const [show, setShow] = useState(false)
 
     const location = useLocation()
@@ -51,7 +52,7 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center'>
-            <div className="relative bg-base-100 w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-20 py-6">
+            <div className="relative bg-base-100 w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-12 py-6">
                 <h1 className='font-semibold text-2xl text-[#E9B57C] mx-auto mt-6 text-center'>Login your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">

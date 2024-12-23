@@ -4,7 +4,14 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
 
-    const {user} = useContext(AuthContext)
+    const {user, signOutUser} = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                toast.success('User signed out successfully', { position: "top-center" })
+            })
+    }
 
     const links =
         <>
@@ -68,7 +75,7 @@ const Navbar = () => {
                                     <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user.displayName}</div>
 
                                 </div>
-                                <Link onClick={handleSignOut} className="py-2 mx-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Sign Out</Link>
+                                <Link onClick={handleSignOut} className="p-3 mx-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Sign Out</Link>
                             </div>
                             :
                             <div className='text-white'>
