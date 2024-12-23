@@ -17,6 +17,7 @@ import MyRequests from './Layouts/MyRequests.jsx';
 import Home from './Layouts/Home.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './Private/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,15 +48,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/addfood',
-        element: <AddFood/>
+        element: <PrivateRoute><AddFood/></PrivateRoute> 
       },
       {
         path: '/myfoods',
-        element: <MyFoods/>
+        element: <PrivateRoute><MyFoods/></PrivateRoute>
       },
       {
         path: '/myrequests',
-        element: <MyRequests/>
+        element: <PrivateRoute><MyRequests/></PrivateRoute>
       },
     ]
   },
