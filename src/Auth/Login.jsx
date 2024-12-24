@@ -56,27 +56,34 @@ const Login = () => {
                 <h1 className='font-semibold text-2xl text-[#E9B57C] mx-auto mt-6 text-center'>Login your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                     </div>
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type={show? `text`: `password`} name='password' placeholder="password" className="input input-bordered" required />
+                        <input type={show ? `text` : `password`} name='password' placeholder="password" className="input input-bordered" required />
+
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>
+
                     </div>
+
                     <div className="form-control mt-6">
                         <button className="py-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Login</button>
                     </div>
-                <div onClick={handleShow} className='absolute bottom-[288px] right-12' >
-                    {show ? <TbEyeglassOff /> : <TbEyeglass />}
-                </div>
+
+                    <div onClick={handleShow} className='absolute bottom-[288px] right-12' >
+                        {show ? <TbEyeglassOff /> : <TbEyeglass />}
+                    </div>
+
                 </form>
                 <div className="divider mx-10 -mt-4">OR</div>
                 <button onClick={handleGoogle} className="p-2 w-[87%] mx-8  bg-[#E9B57C] rounded-md text-white hover:bg-[#E9B57C]/80 hover:rounded-2xl">Login With Google</button>
