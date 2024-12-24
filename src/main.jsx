@@ -18,6 +18,7 @@ import Home from './Layouts/Home.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Private/PrivateRoute.jsx';
+import Details from './Layouts/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,8 +44,12 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: '/allfoods',
+        path: '/foods',
         element: <AllFoods/>
+      },
+      {
+        path: '/food/:id',
+        element: <Details/>
       },
       {
         path: '/addfood',

@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 import { toast } from 'react-toastify';
 
 const AddFood = () => {
 
     const { user } = useContext(AuthContext)
+    const [startDate, setStartDate] = useState(new Date())
     console.log(user.photoURL, user.displayName)
 
     const handleSubmit = e => {
@@ -16,6 +19,7 @@ const AddFood = () => {
         const pickupLocation = form.get('location')
         const foodQuantity = form.get('quantity')
         const additionalNotes = form.get('note')
+        const expireDate = startDate
 
         const donator = {
             image: user.photoURL,
@@ -23,8 +27,8 @@ const AddFood = () => {
             email: user.email
         }
         console.log(donator)
-        
-        const food = { foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes }
+
+        const food = { foodName, pickupLocation, foodImage, foodQuantity, expireDate, donator, additionalNotes }
         console.log(food)
 
         fetch('http://localhost:4000/foods', {
@@ -92,7 +96,12 @@ const AddFood = () => {
                                 <label className="label">
                                     <span className="label-text">Expired Date</span>
                                 </label>
-                                <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required />
+                                {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
+                                <DatePicker
+                                    className='border p-2 rounded-lg w-full input input-bordered'
+                                    selected={startDate}
+                                    onChange={date => setStartDate(date)}
+                                />
                             </div>
 
                         </div>

@@ -16,7 +16,7 @@ const Navbar = () => {
     const links =
         <>
             <li><Link to={'/'}>Home</Link></li>
-            <li><Link to={'/allfoods'}>Available Foods</Link></li>
+            <li><Link to={'/foods'}>Available Foods</Link></li>
             {
                 user &&
                 <>
