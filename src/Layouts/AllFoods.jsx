@@ -1,26 +1,21 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import FoodCard from '../Components/FoodCard';
+import { useQuery } from '@tanstack/react-query';
 
 const AllFoods = () => {
+    
+    const { isPending, data } = useQuery({
+        queryKey: ['foods'],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:4000/foods`)
+            return res.json();
+        }
+    })
 
-    const [foods, setFoods] = useState([])
-
-    useEffect(() => {
-
-        const fetchFoods = async () => {
-            try {
-                const response = await axios.get('http://localhost:4000/foods'); // Replace with your actual API URL
-                console.log(response.data)
-                setFoods(response.data);
-
-            } catch (error) {
-                console.error('Error fetching food data:', error);
-            }
-        };
-
-        fetchFoods();
-    }, [])
+    if (isPending) {
+        return <div className='min-h-screen flex justify-center items-center'><span className="loading loading-bars loading-lg"></span></div>
+    }
 
 
     return (
@@ -30,7 +25,7 @@ const AllFoods = () => {
 
             <div className='w-[96%] max-w-screen-xl mx-auto grid grid-cols-3 gap-4'>
                 {
-                    foods?.map(food => <FoodCard key={food._id} food={food} />)
+                    data?.map(food => <FoodCard key={food._id} food={food} />)
                 }
             </div>
 

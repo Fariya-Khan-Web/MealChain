@@ -4,28 +4,64 @@ import { IoMdRemoveCircleOutline } from 'react-icons/io';
 import { AuthContext } from '../Provider/AuthProvider';
 import { CiEdit } from 'react-icons/ci';
 import { format } from 'date-fns'
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
+// import { toast } from 'react-toastify';
+// import axios from 'axios';
 
 
 const MyFoods = () => {
 
     const { user } = useContext(AuthContext)
 
-    const { isPending ,data } = useQuery({
-        queryKey: ['foods'],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:4000/foods/${user?.email}`)
-            return res.json();
-        }
-    })
 
-    if(isPending){
-        return <div className='min-h-screen flex justify-center items-center'><span className="loading loading-bars loading-lg"></span></div>
+    const [myFoods, setMyFoods ] = useState([])
+
+    useEffect(() => {
+        fetchMyFoods()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user])
+
+
+    const fetchMyFoods = async () => {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/foods/${user?.email}`)
+        setMyFoods(data)
+    }
+    console.log(myFoods)
+
+
+    const handleDelete = async id => {
+        try {
+            const data = await axios.delete(`http://localhost:4000/food/${id}`)
+            console.log(data)
+            toast.success('food removed')
+            fetchMyFoods()
+        } catch (err) {
+            console.log(err)
+        }
+        
     }
 
-    console.log(data)
-
-    const handleDelete = (id) =>{
-
+    const deleteModal = id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                handleDelete(id)
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
     }
 
     useEffect
@@ -52,7 +88,7 @@ const MyFoods = () => {
                         {/* rows */}
 
                         {
-                            data?.map((food, index) => (
+                            myFoods?.map((food, index) => (
 
                                 <tr key={food._id}>
                                     <th>{index + 1}</th>
@@ -81,7 +117,7 @@ const MyFoods = () => {
 
                                     <th className='flex gap-4 items-center py-8 text-2xl'>
                                         <button className='text-green-700'><CiEdit /></button>
-                                        <button onClick={()=>handleDelete(food._id)} className='text-red-500'><IoMdRemoveCircleOutline /></button>
+                                        <button onClick={() => deleteModal(food._id)} className='text-red-500'><IoMdRemoveCircleOutline /></button>
                                     </th>
 
                                 </tr>

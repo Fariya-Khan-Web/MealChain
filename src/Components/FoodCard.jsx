@@ -11,7 +11,7 @@ const FoodCard = ({ food }) => {
                 <img
                     className='h-full'
                     src={foodImage}
-                    alt="Shoes" />
+                    alt={foodName} />
             </figure>
             <div className="p-4 flex flex-col gap-4">
                 <h2 className="text-2xl font-semibold">{foodName}</h2>
