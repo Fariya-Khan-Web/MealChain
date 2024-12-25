@@ -3,12 +3,13 @@ import { AuthContext } from '../Provider/AuthProvider';
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddFood = () => {
 
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date())
-    console.log(user.photoURL, user.displayName)
+    const navigate = useNavigate()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -20,7 +21,9 @@ const AddFood = () => {
         const foodQuantity = form.get('quantity')
         const additionalNotes = form.get('note')
         const expireDate = startDate
+        console.log(expireDate)
 
+        
         const donator = {
             image: user.photoURL,
             name: user.displayName,
@@ -42,14 +45,19 @@ const AddFood = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('shared')
+                    navigate('/foods')
                 }
             })
+
     }
+
+
+
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#E9B57C]'> Spread the Love!</span></h1>
+                    <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#f5b041]'> Spread the Love!</span></h1>
                     <p className="py-6 md:w-[70%] mx-auto lg:w-[86%] lg:mx-0">
                         Contribute to a better tomorrow by sharing surplus food. Fill in the details, including food name, quantity, location, and any special instructions. Your donation can bring hope and a meal to someone in need
                     </p>
@@ -117,7 +125,7 @@ const AddFood = () => {
 
 
                         <div className="form-control mt-6">
-                            <button className="btn  bg-[#E9B57C] font-semibold text-lg text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Add food</button>
+                            <button className="btn  bg-[#f5b041] font-semibold text-lg text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Add food</button>
                         </div>
                     </form>
                 </div>

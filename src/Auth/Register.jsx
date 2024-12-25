@@ -81,7 +81,7 @@ const Register = () => {
     return (
         <div className='flex justify-center items-center'>
             <div className="relative bg-base-100 w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-20 py-6">
-                <h1 className='font-semibold text-2xl text-[#E9B57C] mx-auto mt-6 text-center'>Create your account</h1>
+                <h1 className='font-semibold text-2xl text-[#f5b041] mx-auto mt-6 text-center'>Create your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
 
@@ -119,15 +119,15 @@ const Register = () => {
 
 
                     <div className="form-control mt-6">
-                        <button className="py-2 px-4 bg-[#E9B57C] text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Register</button>
+                        <button className="py-2 px-4 bg-[#f5b041] text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Register</button>
                     </div>
                     <div onClick={handleShow} className='absolute bottom-[257px] right-12' >
                         {show ? <TbEyeglassOff /> : <TbEyeglass />}
                     </div>
                 </form>
                 <div className="divider mx-10 -mt-4">OR</div>
-                <button onClick={handleGoogle} className="p-2 w-[87%] mx-8  bg-[#E9B57C] rounded-md text-white hover:bg-[#E9B57C]/80 hover:rounded-2xl flex gap-2 justify-center items-center"><FaGoogle />Sign up With Google</button>
-                <p className='text-center my-4'>Already have an account? <Link to='/auth' className='hover:text-[#E9B57C] link'>Login</Link> now</p>
+                <button onClick={handleGoogle} className="p-2 w-[87%] mx-8  bg-[#f5b041] rounded-md text-white hover:bg-[#f5b041]/80 hover:rounded-2xl flex gap-2 justify-center items-center"><FaGoogle />Sign up With Google</button>
+                <p className='text-center my-4'>Already have an account? <Link to='/auth' className='hover:text-[#f5b041] link'>Login</Link> now</p>
             </div>
         </div>
     );

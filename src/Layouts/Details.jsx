@@ -50,7 +50,7 @@ const Details = () => {
                         </div>
                     </div>
                     <div className="mt-4">
-                        <button className="p-2 bg-[#E9B57C] w-full text-white rounded-md hover:bg-[#E9B57C]/80 hover:rounded-2xl">Request</button>
+                        <button className="p-2 bg-[#f5b041] w-full text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Request</button>
                     </div>
                 </div>
             </div>

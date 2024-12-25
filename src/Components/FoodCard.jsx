@@ -18,7 +18,7 @@ const FoodCard = ({ food }) => {
                 <p className=''>{additionalNotes}</p>
                 {/* <p className='my-3'><span className='font-semibold'>Quantity:</span> {foodQuantity} servings</p> */}
                 <div className="card-actions">
-                    <Link to={`/food/${_id}`} className="p-2 text-center font-semibold bg-[#E9B57C] rounded-md w-full text-white hover:bg-[#E9B57C]/80 hover:rounded-2xl">See Details</Link>
+                    <Link to={`/food/${_id}`} className="p-2 text-center font-semibold bg-[#f5b041] rounded-md w-full text-white hover:bg-[#f5b041]/80 hover:rounded-2xl">See Details</Link>
                 </div>
             </div>
         </div>
