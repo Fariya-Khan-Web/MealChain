@@ -19,6 +19,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Private/PrivateRoute.jsx';
 import Details from './Layouts/Details.jsx';
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
 const router = createBrowserRouter([
   {
@@ -27,7 +34,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: '/auth',
@@ -45,33 +52,38 @@ const router = createBrowserRouter([
       },
       {
         path: '/foods',
-        element: <AllFoods/>
+        element: <AllFoods />
       },
       {
         path: '/food/:id',
-        element: <Details/>
+        element: <PrivateRoute><Details /></PrivateRoute>
       },
       {
         path: '/addfood',
-        element: <PrivateRoute><AddFood/></PrivateRoute> 
+        element: <PrivateRoute><AddFood /></PrivateRoute>
       },
       {
         path: '/myfoods',
-        element: <PrivateRoute><MyFoods/></PrivateRoute>
+        element: <PrivateRoute><MyFoods /></PrivateRoute>
       },
       {
         path: '/myrequests',
-        element: <PrivateRoute><MyRequests/></PrivateRoute>
+        element: <PrivateRoute><MyRequests /></PrivateRoute>
       },
     ]
   },
 ]);
 
+// Create a client
+const queryClient = new QueryClient()
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-      <ToastContainer />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer />
+      </AuthProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )

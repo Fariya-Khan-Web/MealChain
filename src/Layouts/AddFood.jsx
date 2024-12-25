@@ -76,7 +76,7 @@ const AddFood = () => {
                         {/* location */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Picup Location</span>
+                                <span className="label-text">Pickup Location</span>
                             </label>
                             <input type="text" name='location' placeholder="Enter picup location" className="input input-bordered" required />
                         </div>
