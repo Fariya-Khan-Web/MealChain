@@ -68,7 +68,7 @@ const Register = () => {
         loginGoogle()
             .then(result => {
                 setUser(result.user)
-                toast.success('User created successfully', { position: "top-center" })
+                toast.success('Signed in with google', { position: "top-center" })
                 navigate(location?.state ? location?.state : '/')
 
             })

@@ -4,10 +4,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { format } from 'date-fns';
+import { toast } from 'react-toastify';
 
 const Details = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [food, setFood] = useState()
     const [startDate, setStartDate] = useState(new Date())
 
@@ -30,11 +32,37 @@ const Details = () => {
         fetchFood();
     }, [])
 
-    const { _id, foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes } = food || {}
+    const { _id, foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes ,expireDate } = food || {}
 
 
-    const handleRequest = id => {
+    const handleRequest = e => {
+        // e.preventDefault()
+        
+        const form = new FormData(e.target)
+        const additionalNote = form.get('note')
+        
+        console.log('requested')
 
+        const requested_food = {
+            food_id : _id,
+            foodName, 
+            foodImage,
+            donator,
+            requester_email : user.email,
+            request_date : startDate,
+            pickupLocation,
+            expireDate,
+            additionalNote
+        }
+
+        if(requested_food.requester_email === donator.email){
+            return toast.error("You can't request for your own food", {position: 'top-center'})
+        }
+
+        // if()
+
+        console.log(requested_food)
+      
     }
 
     // const
@@ -69,7 +97,7 @@ const Details = () => {
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box">
                                 <div className="modal-action md:mr-3">
-                                    <form method="dialog">
+                                    <form onSubmit={handleRequest} method="dialog">
 
                                         {/* food name */}
                                         <div className="form-control">
@@ -87,7 +115,7 @@ const Details = () => {
                                             <input type="url" name='photo' defaultValue={foodImage} disabled className="input input-bordered" required />
                                         </div>
 
-                                        <div className='grid grid-cols-2 gap-3'>
+                                        <div className='grid md:grid-cols-2 gap-3'>
 
                                             {/* id */}
                                             <div className="form-control">
@@ -126,8 +154,9 @@ const Details = () => {
                                                 </label>
                                                 {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
                                                 <DatePicker
+                                                    
                                                     className='border p-2 rounded-lg w-full input input-bordered'
-                                                    selected={startDate}
+                                                    selected={expireDate}
                                                     disabled
                                                     onChange={date => setStartDate(date)}
                                                 />
@@ -135,7 +164,7 @@ const Details = () => {
 
                                         </div>
 
-                                        <div className='grid grid-cols-2 gap-3'>
+                                        <div className='grid md:grid-cols-2 gap-3'>
 
                                             {/* contributor name */}
                                             <div className="form-control">
@@ -156,7 +185,7 @@ const Details = () => {
                                         </div>
 
 
-                                        <div className='grid grid-cols-2 gap-3'>
+                                        <div className='grid md:grid-cols-2 gap-3'>
                                             {/* Requester name */}
                                             <div className="form-control">
                                                 <label className="label">
@@ -191,7 +220,7 @@ const Details = () => {
 
 
                                         {/* if there is a button in form, it will close the modal */}
-                                        <button className="btn p-2 bg-[#f5b041] w-full text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Request</button>
+                                        <button  className="btn p-2 bg-[#f5b041] w-full text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Request</button>
                                     </form>
                                 </div>
                             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import FoodCard from './FoodCard';
 import { useQuery } from '@tanstack/react-query';
 import FeaturedCard from './FeaturedCard';
+import { Link } from 'react-router-dom';
 
 const Featured = () => {
 
@@ -27,6 +28,10 @@ const Featured = () => {
                     data?.map(food => <FeaturedCard key={food._id} food={food} />)
                 }
 
+            </div>
+
+            <div className='flex justify-center'>
+                <Link to={'/foods'} className='btn p-2 bg-[#f5b041] w-1/2 text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl'>See All</Link>
             </div>
 
         </div>
