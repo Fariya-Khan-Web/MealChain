@@ -1,10 +1,12 @@
 import React from 'react';
 import Banner from '../Components/Banner';
+import Featured from '../Components/Featured';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-base-200'>
             <Banner/>
+            <Featured/>
         </div>
     );
 };

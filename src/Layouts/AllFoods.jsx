@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import FoodCard from '../Components/FoodCard';
 import { useQuery } from '@tanstack/react-query';
 import { FiSearch } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const AllFoods = () => {
 
@@ -48,19 +49,6 @@ const AllFoods = () => {
     }, [])
 
 
-    // const { isPending, data } = useQuery({
-    //     queryKey: ['foods'],
-    //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:4000/foods`)
-    //         return res.json();
-    //     }
-    // })
-
-    // if (isPending) {
-    //     return <div className='min-h-screen flex justify-center items-center'><span className="loading loading-bars loading-lg"></span></div>
-    // }
-
-
     return (
         <div className='bg-base-200 py-10'>
             <h1 className='text-4xl font-bold text-center'>Fresh Foods,<span className='text-[#f5b041]'> Ready for Pickup</span></h1>
@@ -85,7 +73,21 @@ const AllFoods = () => {
 
             <div className={layout ? `w-[96%] max-w-screen-xl mx-auto grid grid-cols-3 gap-4` : `w-[96%] max-w-screen-xl mx-auto grid grid-cols-2 gap-4`}>
                 {
-                    foods?.map(food => <FoodCard key={food._id} food={food} />)
+                    foods?.map(food =>
+                        <div className={layout?"card bg-base-100 shadow-xl rounded-md": "grid grid-cols-2 bg-base-100 shadow-xl rounded-md"}>
+                            <img
+                                className='h-full rounded'
+                                src={food?.foodImage}
+                                alt={food?.foodName} />
+                            <div className="p-4 flex flex-col gap-4">
+                                <h2 className="text-2xl font-semibold">{food?.foodName}</h2>
+                                <p className=''>{food?.additionalNotes}</p>
+                                {/* <p className='my-3'><span className='font-semibold'>Quantity:</span> {foodQuantity} servings</p> */}
+                                <div className="card-actions">
+                                    <Link to={`/food/${food?._id}`} className="p-2 text-center font-semibold bg-[#f5b041] rounded-md w-full text-white hover:bg-[#f5b041]/80 hover:rounded-2xl">See Details</Link>
+                                </div>
+                            </div>
+                        </div>)
                 }
             </div>
 
