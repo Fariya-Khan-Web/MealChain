@@ -26,6 +26,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Update from './Layouts/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: '/myfoods',
         element: <PrivateRoute><MyFoods /></PrivateRoute>
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoute><Update /></PrivateRoute>
       },
       {
         path: '/myrequests',

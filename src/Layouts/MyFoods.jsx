@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 // import axios from 'axios';
 
@@ -117,7 +118,7 @@ const MyFoods = () => {
                                     <td>{food?.foodStatus}</td>
 
                                     <th className='flex gap-4 items-center py-8 text-2xl'>
-                                        <button className='text-green-700'><CiEdit /></button>
+                                        <Link to={`/update/${food._id}`} className='text-green-700'><CiEdit /></Link>
                                         <button onClick={() => deleteModal(food._id)} className='text-red-500'><IoMdRemoveCircleOutline /></button>
                                     </th>
 

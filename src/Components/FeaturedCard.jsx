@@ -6,7 +6,7 @@ const FeaturedCard = ({ food }) => {
     const { _id, foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes } = food
 
     return (
-        <div className='rounded-md bg-white grid grid-cols-2 '>
+        <div className='rounded-md bg-base-100 grid grid-cols-2 '>
             <img className='h-full' src={foodImage} alt="" />
             <div className='p-4 flex flex-col gap-3'>
                 <h1 className='text-3xl font-semibold'>{foodName}</h1>

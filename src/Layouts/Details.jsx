@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
-import { format } from 'date-fns';
+import { compareAsc, format } from 'date-fns';
 import { toast } from 'react-toastify';
 
 const Details = () => {
@@ -12,6 +12,7 @@ const Details = () => {
     const { user } = useContext(AuthContext)
     const [food, setFood] = useState()
     const [startDate, setStartDate] = useState(new Date())
+    const navigate = useNavigate()
 
 
     const param = useParams()
@@ -59,6 +60,10 @@ const Details = () => {
             return toast.error("You can't request for your own food", { position: 'top-center' })
         }
 
+        if(compareAsc(new Date(), new Date(expireDate) === 1)){
+            return toast.error('This food is Expired', { position: 'top-center' })
+        }
+
 
         fetch('http://localhost:4000/food_request', {
             method: 'POST',
@@ -71,6 +76,7 @@ const Details = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Request sent to contridutor', { position: 'top-center' })
+                    navigate('/myrequests')
                 }
                 console.log(data)
             })
