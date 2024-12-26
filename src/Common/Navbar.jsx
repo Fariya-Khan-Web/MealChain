@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
 
@@ -69,10 +70,10 @@ const Navbar = () => {
                                     <div className="btn btn-ghost btn-circle avatar">
                                         <img className='w-full rounded-full'
                                             alt="avatar"
-                                            src={user.photoURL} />
+                                            src={user?.photoURL} />
                                     </div>
 
-                                    <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user.displayName}</div>
+                                    <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user?.displayName}</div>
 
                                 </div>
                                 <Link onClick={handleSignOut} className="p-3 mx-2 px-4 bg-[#f5b041] text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Sign Out</Link>

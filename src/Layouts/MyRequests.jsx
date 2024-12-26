@@ -10,7 +10,7 @@ const MyRequests = () => {
     const [requests, setRequests] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/food_request/${user.email}`)
+        fetch(`https://kindbites.vercel.app/food_request/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setRequests(data)

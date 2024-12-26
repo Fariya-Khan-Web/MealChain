@@ -8,6 +8,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import UseAxiosSecure from '../Hooks/UseAxiosSecure';
 // import { toast } from 'react-toastify';
 // import axios from 'axios';
 
@@ -15,30 +16,32 @@ import { Link } from 'react-router-dom';
 const MyFoods = () => {
 
     const { user } = useContext(AuthContext)
+    const axiosSecure = UseAxiosSecure()
 
-
-    const [myFoods, setMyFoods ] = useState([])
+    const [myFoods, setMyFoods] = useState([])
 
     useEffect(() => {
-        fetchMyFoods()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        
+        axiosSecure.get(`/foods/${user?.email}`)
+        .then(res => setMyFoods(res.data))
+
     }, [user])
 
 
-    const fetchMyFoods = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/foods/${user?.email}`)
-        setMyFoods(data)
-    }
+    // const fetchMyFoods = async () => {
+    //     const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/foods/${user?.email}`, { withCredentials: true })
+    //     setMyFoods(data)
+    // }
 
 
     const handleDelete = async id => {
         try {
-            const data = await axios.delete(`http://localhost:4000/food/${id}`)
+            const data = await axios.delete(`https://kindbites.vercel.app/food/${id}`)
             toast.success('food removed')
-            fetchMyFoods()
+            // fetchMyFoods()
         } catch (err) {
         }
-        
+
     }
 
     const deleteModal = id => {
