@@ -22,7 +22,7 @@ const Featured = () => {
     return (
         <div className='max-w-screen-2xl mx-auto py-14'>
             <h1 className='text-5xl font-bold'>Feast of Plenty: <span className='text-[#f5b041]'>Highlighted Food Donations</span></h1>
-            <p className='w-[60%] my-5'>Discover the most generous food donations from our community! This section highlights the top contributions with the largest quantities, ensuring plenty for those in need.</p>
+            <p className='w-[60%] my-5 text-gray-600'>Discover the most generous food donations from our community! This section highlights the top contributions with the largest quantities, ensuring plenty for those in need.</p>
             <div className='grid grid-cols-2 gap-5 my-10'>
                 {
                     data?.map(food => <FeaturedCard key={food._id} food={food} />)

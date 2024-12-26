@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@example.com",
+      "image": "https://randomuser.me/api/portraits/women/1.jpg",
+      "testimonial": "Donating food through this platform was such a rewarding experience. The process was incredibly easy, and I loved knowing that the extra meals I had would go directly to someone in need. It’s a small effort from my side, but the impact it creates is immense. This platform has truly changed how I view food sharing and community support.",
+      "date": "2024-12-22"
+    },
+    {
+      "id": 2,
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "image": "https://randomuser.me/api/portraits/men/2.jpg",
+      "testimonial": "I can’t thank this initiative enough for the amazing work they’re doing. It’s heartwarming to see how a simple act of sharing surplus food can light up someone’s day. As someone who regularly donates, I’ve seen firsthand the gratitude and relief on people’s faces. This platform is a beacon of hope for those who need it most, and it inspires me to do even more.",
+      "date": "2024-12-20"
+    },
+    {
+      "id": 3,
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "image": "https://randomuser.me/api/portraits/women/3.jpg",
+      "testimonial": "I was going through a tough time, and finding this platform felt like a blessing. The food I received was fresh, healthy, and exactly what I needed to get back on my feet. I can’t express how much this service has helped me and my family during a critical moment. It’s not just about the food; it’s about the kindness and support that this platform represents.",
+      "date": "2024-12-18"
+    },
+    {
+      "id": 4,
+      "name": "Robert Wilson",
+      "email": "robert.wilson@example.com",
+      "image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "testimonial": "Sharing food through this platform has been a transformative experience for me. I used to throw away leftovers or surplus food, but now I see how valuable those resources can be for someone in need. The platform makes the entire process simple and effective, and I’ve met some incredible people along the way. It’s a reminder that a little kindness can go a long way.",
+      "date": "2024-12-15"
+    },
+    {
+      "id": 5,
+      "name": "Olivia Martinez",
+      "email": "olivia.martinez@example.com",
+      "image": "https://randomuser.me/api/portraits/women/5.jpg",
+      "testimonial": "I’m so grateful for this initiative. As a frequent donor, I’ve come to realize just how interconnected we all are as a community. This platform has made giving back not just easy but also incredibly fulfilling. Every time I donate, I feel a sense of pride knowing that my actions are contributing to something greater. It’s a wonderful way to promote sustainability and compassion in our society.",
+      "date": "2024-12-12"
+    }
+  ]
+  

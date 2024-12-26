@@ -48,6 +48,7 @@ const Details = () => {
             food_id: _id,
             foodName,
             foodImage,
+            foodQuantity,
             donator,
             requester_email: user.email,
             request_date: startDate,
