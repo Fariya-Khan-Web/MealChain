@@ -13,7 +13,6 @@ const MyRequests = () => {
         fetch(`http://localhost:4000/food_request/${user.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setRequests(data)
             })
     }, [])

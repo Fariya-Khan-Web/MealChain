@@ -23,7 +23,6 @@ const AddFood = () => {
         const additionalNotes = form.get('note')
         const expireDate = startDate
         const foodStatus = 'available'
-        console.log(expireDate)
 
         
         const donator = {
@@ -38,7 +37,6 @@ const AddFood = () => {
         }
 
         const food = { foodName, pickupLocation, foodImage, foodQuantity, expireDate, donator, additionalNotes, foodStatus }
-        console.log(food)
 
         fetch('http://localhost:4000/foods', {
             method: "POST",

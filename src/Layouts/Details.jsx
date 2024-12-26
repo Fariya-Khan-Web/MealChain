@@ -26,7 +26,6 @@ const Details = () => {
 
 
             } catch (error) {
-                console.error('Error fetching food data:', error);
             }
         };
 
@@ -42,7 +41,6 @@ const Details = () => {
         const form = new FormData(e.target)
         const additionalNote = form.get('note')
 
-        console.log('requested')
 
         const requested_food = {
             food_id: _id,
@@ -61,8 +59,6 @@ const Details = () => {
             return toast.error("You can't request for your own food", { position: 'top-center' })
         }
 
-        console.log(new Date(expireDate))
-        console.log(new Date())
         if(new Date().getTime() > new Date(expireDate).getTime()){
             return toast.error('This food is Expired', { position: 'top-center' })
         }
@@ -81,10 +77,8 @@ const Details = () => {
                     toast.success('Request sent to contridutor', { position: 'top-center' })
                     navigate('/myrequests')
                 }
-                console.log(data)
             })
 
-        console.log(requested_food)
 
     }
 

@@ -28,7 +28,6 @@ const Register = () => {
         const photo = form.get('photo')
         const password = form.get('password')
 
-        console.log({name, email, photo, password})
 
         const regex1 = /^.{6,}$/;
 
@@ -57,7 +56,6 @@ const Register = () => {
                 navigate('/')
             })
             .catch(err => {
-                console.log(err)
                 toast.error('Error', { position: "top-center" })
             })
 
@@ -73,7 +71,6 @@ const Register = () => {
 
             })
             .catch(err => {
-                console.log(err)
                 toast.error('Error, try again', { position: "top-center" })
             })
     }

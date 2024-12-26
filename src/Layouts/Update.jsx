@@ -85,7 +85,6 @@ const Update = () => {
                     toast.success('Updated food data', { position: 'top-center' })
                     navigate(-1)
                 }
-                console.log(data)
             })
     }
 

@@ -29,17 +29,14 @@ const MyFoods = () => {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/foods/${user?.email}`)
         setMyFoods(data)
     }
-    console.log(myFoods)
 
 
     const handleDelete = async id => {
         try {
             const data = await axios.delete(`http://localhost:4000/food/${id}`)
-            console.log(data)
             toast.success('food removed')
             fetchMyFoods()
         } catch (err) {
-            console.log(err)
         }
         
     }

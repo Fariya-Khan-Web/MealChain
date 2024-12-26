@@ -23,7 +23,6 @@ const AllFoods = () => {
     // layout
     const handleLayout = () => {
         setLayout(!layout)
-        console.log(layout)
     }
 
     // sort
@@ -37,11 +36,9 @@ const AllFoods = () => {
         const fetchFoods = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/foods'); // Replace with your actual API URL
-                console.log(response.data)
                 setFoods(response.data);
 
             } catch (error) {
-                console.error('Error fetching food data:', error);
             }
         };
 
@@ -49,7 +46,6 @@ const AllFoods = () => {
     }, [])
 
     const available = foods.filter(food => food.foodStatus === 'available')
-    console.log(available)
 
 
     return (
