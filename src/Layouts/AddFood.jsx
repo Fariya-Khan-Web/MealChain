@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { compareAsc } from 'date-fns';
 
 const AddFood = () => {
 
@@ -30,7 +31,11 @@ const AddFood = () => {
             name: user.displayName,
             email: user.email
         }
-        console.log(donator)
+
+
+        if(new Date().getTime() > expireDate.getTime()){
+            return toast.error("You can't add expired foods. This food is already expired", { position: 'top-center' })
+        }
 
         const food = { foodName, pickupLocation, foodImage, foodQuantity, expireDate, donator, additionalNotes, foodStatus }
         console.log(food)
@@ -45,7 +50,7 @@ const AddFood = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success('shared')
+                    toast.success('Food Shared to the website',{ position: 'top-center' })
                     navigate('/foods')
                 }
             })

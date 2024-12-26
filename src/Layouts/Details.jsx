@@ -60,7 +60,9 @@ const Details = () => {
             return toast.error("You can't request for your own food", { position: 'top-center' })
         }
 
-        if(compareAsc(new Date(), new Date(expireDate) === 1)){
+        console.log(new Date(expireDate))
+        console.log(new Date())
+        if(new Date().getTime() > new Date(expireDate).getTime()){
             return toast.error('This food is Expired', { position: 'top-center' })
         }
 
@@ -101,6 +103,7 @@ const Details = () => {
                     <h2 className="text-4xl font-semibold">{foodName} <span className='text-base font-normal'>({foodQuantity} servings)</span></h2>
                     <p className='my-4 lg:w-[70%]'>{additionalNotes}</p>
                     <p className='font-semibold my-2'>Pickup Location: <span className='font-normal'>{pickupLocation}</span></p>
+                    <p className='font-semibold my-2'>Expire Date: <span className='font-normal'> {food?.expireDate ? format(new Date(food.expireDate), 'P') : 'N/A'}</span></p>
                     <h3 className='my-2 mt-4 font-bold text-xl'>Contributors Identity-</h3>
                     <div className='flex items-center gap-6'>
                         <img className='rounded-full w-20' src={donator?.image} alt="" />
