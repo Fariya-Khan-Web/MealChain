@@ -48,6 +48,9 @@ const AllFoods = () => {
         fetchFoods();
     }, [])
 
+    const available = foods.filter(food => food.foodStatus === 'available')
+    console.log(available)
+
 
     return (
         <div className='bg-base-200 py-10'>
@@ -73,7 +76,7 @@ const AllFoods = () => {
 
             <div className={layout ? `w-[96%] max-w-screen-xl mx-auto grid grid-cols-3 gap-4` : `w-[96%] max-w-screen-xl mx-auto grid grid-cols-2 gap-4`}>
                 {
-                    foods?.map(food =>
+                    available?.map(food =>
                         <div className={layout?"card bg-base-100 shadow-xl rounded-md": "grid grid-cols-2 bg-base-100 shadow-xl rounded-md"}>
                             <img
                                 className='h-full rounded'

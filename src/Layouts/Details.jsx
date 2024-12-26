@@ -32,37 +32,51 @@ const Details = () => {
         fetchFood();
     }, [])
 
-    const { _id, foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes ,expireDate } = food || {}
+    const { _id, foodName, pickupLocation, foodImage, foodQuantity, donator, additionalNotes, expireDate, foodStatus } = food || {}
 
 
     const handleRequest = e => {
         // e.preventDefault()
-        
+
         const form = new FormData(e.target)
         const additionalNote = form.get('note')
-        
+
         console.log('requested')
 
         const requested_food = {
-            food_id : _id,
-            foodName, 
+            food_id: _id,
+            foodName,
             foodImage,
             donator,
-            requester_email : user.email,
-            request_date : startDate,
+            requester_email: user.email,
+            request_date: startDate,
             pickupLocation,
             expireDate,
-            additionalNote
+            additionalNote,
         }
 
-        if(requested_food.requester_email === donator.email){
-            return toast.error("You can't request for your own food", {position: 'top-center'})
+        if (requested_food.requester_email === donator.email) {
+            return toast.error("You can't request for your own food", { position: 'top-center' })
         }
 
-        // if()
+
+        fetch('http://localhost:4000/food_request', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(requested_food)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Request sent to contridutor', { position: 'top-center' })
+                }
+                console.log(data)
+            })
 
         console.log(requested_food)
-      
+
     }
 
     // const
@@ -154,7 +168,7 @@ const Details = () => {
                                                 </label>
                                                 {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
                                                 <DatePicker
-                                                    
+
                                                     className='border p-2 rounded-lg w-full input input-bordered'
                                                     selected={expireDate}
                                                     disabled
@@ -215,12 +229,12 @@ const Details = () => {
                                             <label className="label">
                                                 <span className="label-text">Additional Notes</span>
                                             </label>
-                                            <input type="text" name='note' defaultValue={additionalNotes} className="input mb-4 input-bordered" required />
+                                            <input type="text" name='note' className="input mb-4 input-bordered" required />
                                         </div>
 
 
                                         {/* if there is a button in form, it will close the modal */}
-                                        <button  className="btn p-2 bg-[#f5b041] w-full text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Request</button>
+                                        <button className="btn p-2 bg-[#f5b041] w-full text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Request</button>
                                     </form>
                                 </div>
                             </div>

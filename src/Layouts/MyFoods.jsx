@@ -79,7 +79,7 @@ const MyFoods = () => {
                             <th>food</th>
                             <th>Pickup Location</th>
                             <th>Expire Date</th>
-                            <th>Requests</th>
+                            <th>Food Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -114,7 +114,7 @@ const MyFoods = () => {
 
                                     <td>{food?.expireDate ? format(new Date(food.expireDate), 'P') : 'N/A'}</td>
 
-                                    <td>0</td>
+                                    <td>{food?.foodStatus}</td>
 
                                     <th className='flex gap-4 items-center py-8 text-2xl'>
                                         <button className='text-green-700'><CiEdit /></button>
