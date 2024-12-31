@@ -9,7 +9,7 @@ const Featured = () => {
     const { isPending, data } = useQuery({
         queryKey: ['foods'],
         queryFn: async () => {
-            const res = await fetch(`https://kindbites.vercel.app/foods/top6`)
+            const res = await fetch(`http://localhost:4000/foods/top6`)
             return res.json();
         }
     })

@@ -35,7 +35,7 @@ const AllFoods = () => {
 
         const fetchFoods = async () => {
             try {
-                const response = await axios.get('https://kindbites.vercel.app/foods'); // Replace with your actual API URL
+                const response = await axios.get('http://localhost:4000/foods'); // Replace with your actual API URL
                 setFoods(response.data);
 
             } catch (error) {

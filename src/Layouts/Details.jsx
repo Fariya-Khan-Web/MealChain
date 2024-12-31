@@ -21,7 +21,9 @@ const Details = () => {
 
         const fetchFood = async () => {
             try {
-                const response = await axios.get(`https://kindbites.vercel.app/food/${param.id}`); // Replace with your actual API URL
+                const response = await axios.get(`http://localhost:4000/food/${param.id}`, {
+                    withCredentials: true, // Include cookies for authentication
+                }); // Replace with your actual API URL
                 setFood(response.data)
 
 
@@ -59,16 +61,17 @@ const Details = () => {
             return toast.error("You can't request for your own food", { position: 'top-center' })
         }
 
-        if(new Date().getTime() > new Date(expireDate).getTime()){
+        if (new Date().getTime() > new Date(expireDate).getTime()) {
             return toast.error('This food is Expired', { position: 'top-center' })
         }
 
 
-        fetch('https://kindbites.vercel.app/food_request', {
+        fetch('http://localhost:4000/food_request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(requested_food)
         })
             .then(res => res.json())
@@ -82,7 +85,6 @@ const Details = () => {
 
     }
 
-    // const
 
 
     return (

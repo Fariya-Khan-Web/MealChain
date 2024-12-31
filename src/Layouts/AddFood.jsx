@@ -38,11 +38,12 @@ const AddFood = () => {
 
         const food = { foodName, pickupLocation, foodImage, foodQuantity, expireDate, donator, additionalNotes, foodStatus }
 
-        fetch('https://kindbites.vercel.app/foods', {
+        fetch('http://localhost:4000/foods', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(food)
         })
             .then(res => res.json())

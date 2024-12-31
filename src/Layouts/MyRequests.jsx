@@ -10,12 +10,16 @@ const MyRequests = () => {
     const [requests, setRequests] = useState([])
 
     useEffect(() => {
-        fetch(`https://kindbites.vercel.app/food_request/${user.email}`)
+        fetch(`http://localhost:4000/food_request/${user.email}`, {
+            method: 'GET',
+            credentials: 'include',
+        })
             .then(res => res.json())
             .then(data => {
                 setRequests(data)
             })
     }, [])
+    console.log({ requests })
 
     return (
         <div className='min-h-[calc(100vh-290px)] bg-base-200 py-16'>
@@ -33,7 +37,7 @@ const MyRequests = () => {
                             <th>Pickup Location</th>
                             <th>Expire Date</th>
                             <th>Request Date</th>
-                            
+
                             <th></th>
                         </tr>
                     </thead>
@@ -45,7 +49,7 @@ const MyRequests = () => {
                         {
                             requests?.map((food, index) => (
 
-                                <tr key={food._id}>
+                                <tr key={food?._id}>
                                     <th>{index + 1}</th>
 
                                     <td>
@@ -70,8 +74,8 @@ const MyRequests = () => {
                                     <td>{food?.expireDate ? format(new Date(food.expireDate), 'P') : 'N/A'}</td>
 
                                     <td>{food?.expireDate ? format(new Date(food.request_date), 'P') : 'N/A'}</td>
-                                    
-                                    
+
+
                                 </tr>
                             ))
                         }

@@ -54,14 +54,14 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser?.email }
 
-                axios.post('https://kindbites.vercel.app/jwt', user, { withCredentials: true })
+                axios.post('http://localhost:4000/jwt', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         setloading(false)
                     })
             }
             else {
-                axios.post('https://kindbites.vercel.app/logout', {}, { withCredentials: true })
+                axios.post('http://localhost:4000/logout', {}, { withCredentials: true })
                     .then(res => {
                         console.log('logout', res.data )
                         setloading(false)

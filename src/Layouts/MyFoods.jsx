@@ -21,22 +21,20 @@ const MyFoods = () => {
     const [myFoods, setMyFoods] = useState([])
 
     useEffect(() => {
-        
-        axiosSecure.get(`/foods/${user?.email}`)
-        .then(res => setMyFoods(res.data))
+
+        axiosSecure.get(`http://localhost:4000/foods/${user?.email}`)
+            .then(res => setMyFoods(res.data))
 
     }, [user])
 
 
-    // const fetchMyFoods = async () => {
-    //     const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/foods/${user?.email}`, { withCredentials: true })
-    //     setMyFoods(data)
-    // }
-
 
     const handleDelete = async id => {
         try {
-            const data = await axios.delete(`https://kindbites.vercel.app/food/${id}`)
+            const data = await axios.delete(`http://localhost:4000/food/${id}`, {
+                withCredentials: true, // Include cookies for authentication
+            })
+
             toast.success('food removed')
             // fetchMyFoods()
         } catch (err) {
@@ -58,14 +56,13 @@ const MyFoods = () => {
                 handleDelete(id)
                 Swal.fire({
                     title: "Deleted!",
-                    text: "Your file has been deleted.",
+                    text: "Your food has been deleted. Refresh to see current food list",
                     icon: "success"
                 });
             }
         });
     }
 
-    useEffect
     return (
         <div className='min-h-[calc(100vh-290px)] bg-base-200 py-16'>
             <h1 className='text-3xl font-semibold max-w-screen-xl mx-auto'>Your Contributions to the Community-</h1>
