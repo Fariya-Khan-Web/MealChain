@@ -10,7 +10,7 @@ const MyRequests = () => {
     const [requests, setRequests] = useState([])
 
     useEffect(() => {
-        fetch(`https://kindbites.vercel.app/food_request/fariya.webdev@gmail.com`, {
+        fetch(`https://kindbites.vercel.app/food_request/${user.email}`, {
             credentials: 'include',
         })
             .then(res => res.json())
