@@ -21,7 +21,7 @@ const Details = () => {
 
         const fetchFood = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/food/${param.id}`, {
+                const response = await axios.get(`https://kindbites.vercel.app/food/${param.id}`, {
                     withCredentials: true, // Include cookies for authentication
                 }); // Replace with your actual API URL
                 setFood(response.data)
@@ -66,7 +66,7 @@ const Details = () => {
         }
 
 
-        fetch('http://localhost:4000/food_request', {
+        fetch('https://kindbites.vercel.app/food_request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

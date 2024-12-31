@@ -22,7 +22,7 @@ const MyFoods = () => {
 
     useEffect(() => {
 
-        axiosSecure.get(`http://localhost:4000/foods/${user?.email}`)
+        axiosSecure.get(`https://kindbites.vercel.app/foods/${user?.email}`)
             .then(res => setMyFoods(res.data))
 
     }, [user])
@@ -31,7 +31,7 @@ const MyFoods = () => {
 
     const handleDelete = async id => {
         try {
-            const data = await axios.delete(`http://localhost:4000/food/${id}`, {
+            const data = await axios.delete(`https://kindbites.vercel.app/food/${id}`, {
                 withCredentials: true, // Include cookies for authentication
             })
 

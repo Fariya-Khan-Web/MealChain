@@ -10,20 +10,19 @@ const MyRequests = () => {
     const [requests, setRequests] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:4000/food_request/${user.email}`, {
-            method: 'GET',
+        fetch(`https://kindbites.vercel.app/food_request/fariya.webdev@gmail.com`, {
             credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 setRequests(data)
             })
-    }, [])
-    console.log({ requests })
+    }, [user])
 
     return (
         <div className='min-h-[calc(100vh-290px)] bg-base-200 py-16'>
-            <h1 className='text-3xl font-semibold max-w-screen-xl mx-auto'>Your Contributions to the Community-</h1>
+            <h1 className='text-3xl font-semibold max-w-screen-xl mx-auto'>Foods You Requested For-</h1>
             <div className="overflow-x-auto max-w-screen-xl mx-auto my-10">
                 <table className="table">
                     {/* head */}

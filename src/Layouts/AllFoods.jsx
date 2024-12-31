@@ -27,15 +27,19 @@ const AllFoods = () => {
 
     // sort
     const handleSort = () => {
-        const sortedfoods = [...foods].sort((a, b) => b.expireDate - a.expireDate)
-        setFoods(sortedfoods)
+        const sortedFoods = [...foods].sort((a, b) => {
+            const dateA = new Date(a.expireDate);
+            const dateB = new Date(b.expireDate);
+            return dateA - dateB; 
+        });
+        setFoods(sortedFoods)
     }
 
     useEffect(() => {
 
         const fetchFoods = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/foods'); // Replace with your actual API URL
+                const response = await axios.get('https://kindbites.vercel.app/foods'); // Replace with your actual API URL
                 setFoods(response.data);
 
             } catch (error) {
@@ -73,7 +77,7 @@ const AllFoods = () => {
             <div className={layout ? `w-[96%] max-w-screen-xl mx-auto grid grid-cols-3 gap-4` : `w-[96%] max-w-screen-xl mx-auto grid grid-cols-2 gap-4`}>
                 {
                     available?.map(food =>
-                        <div className={layout?"card bg-base-100 shadow-xl rounded-md": "grid grid-cols-2 bg-base-100 shadow-xl rounded-md"}>
+                        <div key={food._id} className={layout ? "card bg-base-100 shadow-xl rounded-md" : "grid grid-cols-2 bg-base-100 shadow-xl rounded-md"}>
                             <img
                                 className='h-full rounded'
                                 src={food?.foodImage}

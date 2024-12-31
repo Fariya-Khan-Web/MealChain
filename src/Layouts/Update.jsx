@@ -18,14 +18,14 @@ const Update = () => {
     const { isPending, data: foodData } = useQuery({
         queryKey: ['foods'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:4000/food/${id}`)
+            const res = await fetch(`https://kindbites.vercel.app/food/${id}`)
             return res.json();
         }
     })
 
     // const mutation = useMutation(
     //     async (updatedData) => {
-    //         const res = await fetch(`http://localhost:4000/food/${id}`, {
+    //         const res = await fetch(`https://kindbites.vercel.app/food/${id}`, {
     //             method: 'PATCH',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const Update = () => {
 
         // mutation.mutate(updatedData)
 
-        fetch(`http://localhost:4000/food/${id}`, {
+        fetch(`https://kindbites.vercel.app/food/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
