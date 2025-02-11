@@ -52,26 +52,26 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center'>
-            <div className="relative bg-base-100 w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg my-28 py-6">
+            <div className="relative w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg my-28 py-6 bg-[#faf1e7]/50 dark:bg-[#333232]">
                 <h1 className='font-semibold text-2xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Login your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="   ">Email</span>
                         </label>
                         <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="">Password</span>
                         </label>
                         <input type={show ? `text` : `password`} name='password' placeholder="password" className="input input-bordered" required />
 
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <a href="#" className=" link link-hover">Forgot password?</a>
                         </label>
 
                     </div>
@@ -80,7 +80,7 @@ const Login = () => {
                         <button className="py-2 px-4 bg-[#d3b6b9] dark:bg-[#b88287] text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Login</button>
                     </div>
 
-                    <div onClick={handleShow} className='absolute bottom-[288px] right-12' >
+                    <div onClick={handleShow} className='absolute bottom-[296px] right-12 text-[#b6dbdb] dark:text-[#9bc5c5]' >
                         {show ? <TbEyeglassOff /> : <TbEyeglass />}
                     </div>
 

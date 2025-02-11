@@ -39,7 +39,7 @@ const Navbar = () => {
 
     return (
 
-        <div className=' bg-[#fcf6f0] dark:bg-[#d6c8b5] sticky top-0 z-10 text-[#1d1112] dark:text-white'>
+        <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10 text-[#1d1112] dark:text-white border-b dark:border-[#535353]'>
             <div className="navbar w-[96%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -89,7 +89,7 @@ const Navbar = () => {
                             </div>
                             :
                             <div className='text-white'>
-                                <Link to='/auth' className="py-2 px-4 border-r bg-[#d3b6b9] dark:bg-[#b88287]  rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
+                                <Link to='/auth' className="py-2 px-4 border-r dark:border-[#535353] bg-[#d3b6b9] dark:bg-[#b88287]  rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
                                 <Link to='/auth/register' className="py-2 px-4  bg-[#d3b6b9] dark:bg-[#b88287] rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
                             </div>
                     }
@@ -97,7 +97,7 @@ const Navbar = () => {
 
                     {/* theme toggle */}
 
-                    <label className="swap swap-rotate mx-2 text-[#c7dfdf] dark:text-[#93b8b8]">
+                    <label className="swap swap-rotate mx-2 text-[#b6dbdb] dark:text-[#9bc5c5]">
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" onClick={handleTheme} />
 

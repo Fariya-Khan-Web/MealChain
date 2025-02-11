@@ -53,38 +53,38 @@ const AllFoods = () => {
 
 
     return (
-        <div className='py-10'>
+        <div className='py-10 min-h-screen'>
             <h1 className='text-4xl font-bold text-center'>Fresh Foods,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Ready for Pickup</span></h1>
             <p className='w-[60%] my-4 mx-auto text-center'>Discover a variety of freshly donated meals and ingredients, ready for pickup in your area. Browse the available options and be part of a community that cares and shares.</p>
 
             <div className='flex justify-end gap-3 max-w-screen-xl w-[94%] mx-auto my-10'>
 
                 {/* search */}
-                <label className="input input-bordered flex items-center gap-2">
-                    <input type="text" className="grow" placeholder="Search" value={search}
+                <label className="input input-bordered dark:bg-[#333232] flex items-center gap-2">
+                    <input type="text" className="grow " placeholder="Search" value={search}
                         onChange={handleSearch} />
-                    <button className=' hover:text-[#d3b6b9] dark:text-[#b88287]/70'><FiSearch /></button>
+                    <button className=' text-[#b6dbdb] dark:text-[#9bc5c5] '><FiSearch /></button>
                 </label>
 
                 {/* layout button */}
-                <button onClick={handleLayout} className='btn bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Change Layout</button>
+                <button onClick={handleLayout} className='btn border-none bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Change Layout</button>
 
                 {/* sort button */}
-                <button onClick={handleSort} className='btn bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Sort by Expire-date</button>
+                <button onClick={handleSort} className='btn border-none bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Sort by Expire-date</button>
 
             </div>
 
             <div className={layout ? `w-[96%] max-w-screen-xl mx-auto grid grid-cols-3 gap-4` : `w-[96%] max-w-screen-xl mx-auto grid grid-cols-2 gap-4`}>
                 {
                     available?.map(food =>
-                        <div key={food._id} className={layout ? "card bg-base-100 shadow-xl rounded-md" : "grid grid-cols-2 bg-base-100 shadow-xl rounded-md"}>
+                        <div key={food._id} className={layout ? "card bg-base-100 shadow-xl rounded-md dark:bg-[#333232] dark:border-none border" : "grid grid-cols-2 bg-base-100 shadow-xl rounded-md dark:bg-[#333232] dark:border-none border"}>
                             <img
                                 className='h-full rounded'
                                 src={food?.foodImage}
                                 alt={food?.foodName} />
                             <div className="p-4 flex flex-col gap-4">
                                 <h2 className="text-2xl font-semibold">{food?.foodName}</h2>
-                                <p className=''>{food?.additionalNotes}</p>
+                                <p className='flex-grow'>{food?.additionalNotes}</p>
                                 {/* <p className='my-3'><span className='font-semibold'>Quantity:</span> {foodQuantity} servings</p> */}
                                 <div className="card-actions">
                                     <Link to={`/food/${food?._id}`} className="p-2 text-center font-semibold bg-[#d3b6b9] dark:bg-[#b88287] rounded-md w-full text-white hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">See Details</Link>

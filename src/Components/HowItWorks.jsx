@@ -14,7 +14,7 @@ const HowItWorks = () => {
                
                 <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
-                        <MdOutlineAccountBox className='text-[#c7dfdf] my-2 text-6xl mx-auto' />
+                        <MdOutlineAccountBox className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
                     <h1 className='text-2xl font-semibold'>Create Account</h1>
                     <div className='mt-4'>Go to register page , provide all the informations required and you are ready to go</div>
@@ -23,7 +23,7 @@ const HowItWorks = () => {
                 
                 <div className=' border dark:bg-[#333232] dark:border-none  rounded-md shadow-xl p-5 text-center'>
                     <div>
-                        <BiDonateHeart className='text-[#c7dfdf] my-2 text-6xl mx-auto' />
+                        <BiDonateHeart className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
                     <h1 className='text-2xl font-semibold'>Share Food</h1>
                     <div className='mt-4'>Share your food with people in need. Fill up the form in add food page and bring smiles in one click</div>
@@ -32,7 +32,7 @@ const HowItWorks = () => {
                 
                 <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
-                        <VscGitPullRequestClosed  className='text-[#c7dfdf] my-2 text-6xl mx-auto' />
+                        <VscGitPullRequestClosed  className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
                     <h1 className='text-2xl font-semibold'>Request Food</h1>
                     <div className='mt-4'>Explore available foods and request for food other people have added for you.</div>
@@ -41,7 +41,7 @@ const HowItWorks = () => {
                 
                 <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
-                        <RiUserCommunityLine className='text-[#c7dfdf] my-2 text-6xl mx-auto' />
+                        <RiUserCommunityLine className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
                     <h1 className='text-2xl font-semibold'>Our Community</h1>
                     <div className='mt-4'>Share and request for food , help us build a community to prevent food waste</div>
