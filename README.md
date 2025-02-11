@@ -33,3 +33,20 @@ KindBites is a platform dedicated to reducing food waste and fostering community
 
 5. **Request food** 
    Users can request for foods added by other users and thus build a chain
+
+<!-- 
+--text: #060505;
+--background: #fcfbfb;
+--primary: #9c6469;
+--secondary: #c89ea2;
+--accent: #c07f86;
+ -->
+
+
+ <!-- 
+ --text: #180e0f;
+--background: #faf7f7;
+--primary: #c89ea2;
+--secondary: #ccbda8;
+--accent: #c89ea2;
+  -->

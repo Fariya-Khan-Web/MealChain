@@ -11,7 +11,7 @@ const FeaturedCard = ({ food }) => {
             <div className='p-4 flex flex-col gap-3'>
                 <h1 className='text-3xl font-semibold'>{foodName}</h1>
                 <p className='flex-grow'>{additionalNotes}</p>
-                <Link to={`/food/${_id}`} className='p-2 text-center font-semibold bg-[#f5b041] rounded-md w-full text-white hover:bg-[#f5b041]/80 hover:rounded-2xl'>See Details</Link>
+                <Link to={`/food/${_id}`} className='p-2 text-center font-semibold bg-[#c89ea2] rounded-md w-full text-white hover:bg-[#c89ea2]/80 hover:rounded-2xl'>See Details</Link>
             </div>
         </div>
     );

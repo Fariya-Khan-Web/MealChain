@@ -8,7 +8,7 @@ const Testimonial = ({ test }) => {
         <div className='bg-white p-4 rounded-md max-w-md h-54 mx-5 shadow-xl'>
             <div className='flex justify-between'>
                 <div className='flex gap-3'>
-                    <img className='w-16 p-1 border-2 border-[#f5b041] rounded-full' src={image} alt="" />
+                    <img className='w-16 p-1 border-2 border-[#c89ea2] rounded-full' src={image} alt="" />
                     <div>
                         <h3 className='font-bold text-lg'>{name}</h3>
                         <p className='text-gray-600'>{email}</p>

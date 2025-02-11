@@ -30,8 +30,9 @@ const Navbar = () => {
 
 
     return (
-        <div className='border-b'>
-            <div className="navbar bg-base-100 w-[96%] max-w-screen-2xl mx-auto">
+
+        <div className='border-b bg-[#ccbda8] bg-opacity-70 sticky top-0 z-10 text-white'>
+            <div className="navbar w-[96%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,14 +51,14 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
-                    <h1 className="text-2xl font-bold -ml-2">Meal<span className='text-[#f5b041]'>Chain</span></h1>
+                    <h1 className="text-3xl font-bold -ml-2">Meal<span className='text-[#c89ea2]'>Chain</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal text-base font-medium px-1">
                         {links}
                     </ul>
                 </div>
@@ -76,12 +77,12 @@ const Navbar = () => {
                                     <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user?.displayName}</div>
 
                                 </div>
-                                <Link onClick={handleSignOut} className="p-3 mx-2 px-4 bg-[#f5b041] text-white rounded-md hover:bg-[#f5b041]/80 hover:rounded-2xl">Sign Out</Link>
+                                <Link onClick={handleSignOut} className="p-3 mx-2 px-4 bg-[#c89ea2] text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl">Sign Out</Link>
                             </div>
                             :
                             <div className='text-white'>
-                                <Link to='/auth' className="py-2 px-4 border-r bg-[#f5b041]  rounded-md hover:bg-[#f5b041]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
-                                <Link to='/auth/register' className="py-2 px-4  bg-[#f5b041] rounded-md hover:bg-[#f5b041]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
+                                <Link to='/auth' className="py-2 px-4 border-r bg-[#c89ea2]  rounded-md hover:bg-[#c89ea2]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
+                                <Link to='/auth/register' className="py-2 px-4  bg-[#c89ea2] rounded-md hover:bg-[#c89ea2]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
                             </div>
                     }
                 </div>
