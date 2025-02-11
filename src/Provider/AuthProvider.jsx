@@ -8,6 +8,7 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
+    const [dark, setDark] = useState(false);
     const [loading, setloading] = useState(true)
 
     // const auth = getAuth(app)
@@ -44,6 +45,8 @@ const AuthProvider = ({ children }) => {
         loginUser,
         loading,
         setloading,
+        dark,
+        setDark,
     }
 
     useEffect(() => {

@@ -6,7 +6,9 @@ import HowItWorks from '../Components/HowItWorks';
 
 const Home = () => {
     return (
-        <div className='bg-base-200'>
+        <div 
+        // className='bg-base-200'
+        >
             <Banner/>
             <HowItWorks/>
             <Featured/>

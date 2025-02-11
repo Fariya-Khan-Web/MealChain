@@ -62,7 +62,7 @@ const AddFood = () => {
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#c89ea2]'> Spread the Love!</span></h1>
+                    <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Spread the Love!</span></h1>
                     <p className="py-6 md:w-[70%] mx-auto lg:w-[86%] lg:mx-0">
                         Contribute to a better tomorrow by sharing surplus food. Fill in the details, including food name, quantity, location, and any special instructions. Your donation can bring hope and a meal to someone in need
                     </p>
@@ -130,7 +130,7 @@ const AddFood = () => {
 
 
                         <div className="form-control mt-6">
-                            <button className="btn  bg-[#c89ea2] font-semibold text-lg text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl">Add food</button>
+                            <button className="btn  bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Add food</button>
                         </div>
                     </form>
                 </div>

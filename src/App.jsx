@@ -15,11 +15,13 @@ function App() {
   // F57C51
 
   return (
-    <>
+    <div 
+    className='dark:bg-[#221e1e] dark:text-white'
+    >
       <Navbar/>
       <Outlet/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

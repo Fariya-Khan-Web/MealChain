@@ -112,8 +112,8 @@ const Details = () => {
 
                     {/* modal opens */}
                     <div className="mt-4">
-                        {/* <button onClick={()=>handleRequest(_id)} className="p-2 bg-[#c89ea2] w-full text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl">Request</button> */}
-                        <button className="btn p-2 bg-[#c89ea2] w-full text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl" onClick={() => document.getElementById('my_modal_1').showModal()}>Request Food</button>
+                        {/* <button onClick={()=>handleRequest(_id)} className="p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Request</button> */}
+                        <button className="btn p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl" onClick={() => document.getElementById('my_modal_1').showModal()}>Request Food</button>
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box">
                                 <div className="modal-action md:mr-3">
@@ -240,7 +240,7 @@ const Details = () => {
 
 
                                         {/* if there is a button in form, it will close the modal */}
-                                        <button className="btn p-2 bg-[#c89ea2] w-full text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl">Request</button>
+                                        <button className="btn p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Request</button>
                                     </form>
                                 </div>
                             </div>

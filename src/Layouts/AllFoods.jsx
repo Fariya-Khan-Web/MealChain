@@ -53,8 +53,8 @@ const AllFoods = () => {
 
 
     return (
-        <div className='bg-base-200 py-10'>
-            <h1 className='text-4xl font-bold text-center'>Fresh Foods,<span className='text-[#c89ea2]'> Ready for Pickup</span></h1>
+        <div className='py-10'>
+            <h1 className='text-4xl font-bold text-center'>Fresh Foods,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Ready for Pickup</span></h1>
             <p className='w-[60%] my-4 mx-auto text-center'>Discover a variety of freshly donated meals and ingredients, ready for pickup in your area. Browse the available options and be part of a community that cares and shares.</p>
 
             <div className='flex justify-end gap-3 max-w-screen-xl w-[94%] mx-auto my-10'>
@@ -63,14 +63,14 @@ const AllFoods = () => {
                 <label className="input input-bordered flex items-center gap-2">
                     <input type="text" className="grow" placeholder="Search" value={search}
                         onChange={handleSearch} />
-                    <button className=' hover:text-[#c89ea2]/70'><FiSearch /></button>
+                    <button className=' hover:text-[#d3b6b9] dark:text-[#b88287]/70'><FiSearch /></button>
                 </label>
 
                 {/* layout button */}
-                <button onClick={handleLayout} className='btn bg-[#c89ea2] font-semibold text-lg text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl'>Change Layout</button>
+                <button onClick={handleLayout} className='btn bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Change Layout</button>
 
                 {/* sort button */}
-                <button onClick={handleSort} className='btn bg-[#c89ea2] font-semibold text-lg text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl'>Sort by Expire-date</button>
+                <button onClick={handleSort} className='btn bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>Sort by Expire-date</button>
 
             </div>
 
@@ -87,7 +87,7 @@ const AllFoods = () => {
                                 <p className=''>{food?.additionalNotes}</p>
                                 {/* <p className='my-3'><span className='font-semibold'>Quantity:</span> {foodQuantity} servings</p> */}
                                 <div className="card-actions">
-                                    <Link to={`/food/${food?._id}`} className="p-2 text-center font-semibold bg-[#c89ea2] rounded-md w-full text-white hover:bg-[#c89ea2]/80 hover:rounded-2xl">See Details</Link>
+                                    <Link to={`/food/${food?._id}`} className="p-2 text-center font-semibold bg-[#d3b6b9] dark:bg-[#b88287] rounded-md w-full text-white hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">See Details</Link>
                                 </div>
                             </div>
                         </div>)

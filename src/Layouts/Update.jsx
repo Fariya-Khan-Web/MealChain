@@ -153,7 +153,7 @@ const Update = () => {
 
 
                     <div className="form-control mt-6">
-                        <button className="btn  bg-[#c89ea2] font-semibold text-lg text-white rounded-md hover:bg-[#c89ea2]/80 hover:rounded-2xl">Add food</button>
+                        <button className="btn  bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Add food</button>
                     </div>
                 </form>
             </div>

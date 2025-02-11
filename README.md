@@ -38,7 +38,7 @@ KindBites is a platform dedicated to reducing food waste and fostering community
 --text: #060505;
 --background: #fcfbfb;
 --primary: #9c6469;
---secondary: #c89ea2;
+--secondary: #d3b6b9;
 --accent: #c07f86;
  -->
 
@@ -46,7 +46,7 @@ KindBites is a platform dedicated to reducing food waste and fostering community
  <!-- 
  --text: #180e0f;
 --background: #faf7f7;
---primary: #c89ea2;
+--primary: #d3b6b9;
 --secondary: #ccbda8;
---accent: #c89ea2;
+--accent: #d3b6b9;
   -->

@@ -2,24 +2,24 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='border-t bg-base-300'>
-            <footer className="footer text-base-content p-10 max-w-screen-2xl mx-auto">
+        <div className='border-t bg-[#fcf6f0] dark:bg-[#d6c8b5] bg-opacity-70'>
+            <footer className="footer text-base-content dark:text-white dark:font-medium p-10 max-w-screen-2xl mx-auto">
                 <nav>
-                    <h6 className="footer-title ">Services</h6>
+                    <h6 className="text-xl dark:text-white font-bold my-3">Services</h6>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Design</a>
                     <a className="link link-hover">Marketing</a>
                     <a className="link link-hover">Advertisement</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Company</h6>
+                    <h6 className="text-xl dark:text-white font-bold my-3">Company</h6>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
                     <a className="link link-hover">Press kit</a>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Social</h6>
+                    <h6 className="text-xl dark:text-white font-bold my-3">Social</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a href='https://x.com/Fariya_Khan_'>
                             <svg
