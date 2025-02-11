@@ -97,7 +97,7 @@ const Navbar = () => {
 
                     {/* theme toggle */}
 
-                    <label className="swap swap-rotate mx-2 text-[#c7dfdf]">
+                    <label className="swap swap-rotate mx-2 text-[#c7dfdf] dark:text-[#93b8b8]">
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" onClick={handleTheme} />
 

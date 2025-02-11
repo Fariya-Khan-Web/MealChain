@@ -20,7 +20,7 @@ const Featured = () => {
 
 
     return (
-        <div className='max-w-screen-2xl w-[95%] mx-auto my-44'>
+        <div className='max-w-screen-2xl w-[95%] mx-auto  my-28 md:my-44'>
             <h1 className='text-4xl md:text-5xl font-bold'>Feast of Plenty: <span className='text-[#d3b6b9] dark:text-[#b88287]'>Highlighted Food Donations</span></h1>
             <p className='md:w-[80%] lg:w-[60%] my-5 text-gray-600 dark:text-white'>Discover the most generous food donations from our community! This section highlights the top contributions with the largest quantities, ensuring plenty for those in need.</p>
             <div className='grid md:grid-cols-2 gap-5 my-14'>
