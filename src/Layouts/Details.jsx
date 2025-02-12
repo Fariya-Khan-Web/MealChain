@@ -89,12 +89,12 @@ const Details = () => {
 
     return (
         <div className='min-h-[calc(100vh-250px)] flex items-center'>
-            <div className="my-10 w-[94%] max-w-5xl mx-auto shadow-xl">
+            <div className="my-10 w-[94%] max-w-5xl mx-auto shadow-xl rounded-md bg-[#faf1e7]/50 dark:bg-[#333232]">
                 <div>
                     <img
-                        className='w-full h-[430px]'
+                        className='w-full h-[430px] rounded-t-md'
                         src={foodImage}
-                        alt="Movie" />
+                        alt="Food" />
                 </div>
                 <div className="p-5">
                     <h2 className="text-4xl font-semibold">{foodName} <span className='text-base font-normal'>({foodQuantity} servings)</span></h2>
@@ -113,16 +113,16 @@ const Details = () => {
                     {/* modal opens */}
                     <div className="mt-4">
                         {/* <button onClick={()=>handleRequest(_id)} className="p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Request</button> */}
-                        <button className="btn p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl" onClick={() => document.getElementById('my_modal_1').showModal()}>Request Food</button>
+                        <button className="btn border-none p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl" onClick={() => document.getElementById('my_modal_1').showModal()}>Request Food</button>
                         <dialog id="my_modal_1" className="modal">
-                            <div className="modal-box">
+                            <div className="modal-box bg-[#d6d3cf] dark:bg-[#333232] rounded-md">
                                 <div className="modal-action md:mr-3">
                                     <form onSubmit={handleRequest} method="dialog">
 
                                         {/* food name */}
                                         <div className="form-control">
                                             <label className="label">
-                                                <span className="label-text">Food Name</span>
+                                                <span className="">Food Name</span>
                                             </label>
                                             <input type="text" name='name' defaultValue={foodName} disabled className="input input-bordered" required />
                                         </div>
@@ -130,7 +130,7 @@ const Details = () => {
                                         {/* food image */}
                                         <div className="form-control">
                                             <label className="label">
-                                                <span className="label-text">Food Image</span>
+                                                <span className="">Food Image</span>
                                             </label>
                                             <input type="url" name='photo' defaultValue={foodImage} disabled className="input input-bordered" required />
                                         </div>
@@ -140,7 +140,7 @@ const Details = () => {
                                             {/* id */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Food id</span>
+                                                    <span className="">Food id</span>
                                                 </label>
                                                 <input type="text" name='id' defaultValue={_id} disabled className="input input-bordered" required />
                                             </div>
@@ -148,7 +148,7 @@ const Details = () => {
                                             {/* location */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Pickup Location</span>
+                                                    <span className="">Pickup Location</span>
                                                 </label>
                                                 <input type="text" name='location' defaultValue={pickupLocation} disabled className="input input-bordered" required />
                                             </div>
@@ -162,7 +162,7 @@ const Details = () => {
                                             {/* quantity */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Food Quantity</span>
+                                                    <span className="">Food Quantity</span>
                                                 </label>
                                                 <input type="number" name='quantity' defaultValue={foodQuantity} disabled className="input input-bordered" required />
                                             </div>
@@ -170,7 +170,7 @@ const Details = () => {
                                             {/* date */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Expired Date</span>
+                                                    <span className="">Expired Date</span>
                                                 </label>
                                                 {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
                                                 <DatePicker
@@ -189,7 +189,7 @@ const Details = () => {
                                             {/* contributor name */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Contributor Name</span>
+                                                    <span className="">Contributor Name</span>
                                                 </label>
                                                 <input type="text" name='name' defaultValue={donator?.name} disabled className="input input-bordered" required />
                                             </div>
@@ -197,7 +197,7 @@ const Details = () => {
                                             {/* contributor email */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Contributor Email</span>
+                                                    <span className="">Contributor Email</span>
                                                 </label>
                                                 <input type="text" name='name' defaultValue={donator?.email} disabled className="input input-bordered" required />
                                             </div>
@@ -209,7 +209,7 @@ const Details = () => {
                                             {/* Requester name */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Requester Email</span>
+                                                    <span className="">Requester Email</span>
                                                 </label>
                                                 <input type="text" name='name' defaultValue={donator?.email} disabled className="input input-bordered" required />
                                             </div>
@@ -217,7 +217,7 @@ const Details = () => {
                                             {/* current time */}
                                             <div className="form-control">
                                                 <label className="label">
-                                                    <span className="label-text">Current Date</span>
+                                                    <span className="">Current Date</span>
                                                 </label>
                                                 {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
                                                 <DatePicker
@@ -233,14 +233,14 @@ const Details = () => {
                                         {/* note */}
                                         <div className="form-control ">
                                             <label className="label">
-                                                <span className="label-text">Additional Notes</span>
+                                                <span className="">Additional Notes</span>
                                             </label>
                                             <input type="text" name='note' className="input mb-4 input-bordered" required />
                                         </div>
 
 
                                         {/* if there is a button in form, it will close the modal */}
-                                        <button className="btn p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Request</button>
+                                        <button className="btn border-none p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-full text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Request</button>
                                     </form>
                                 </div>
                             </div>

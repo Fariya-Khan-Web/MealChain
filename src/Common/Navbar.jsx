@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { CiEdit } from 'react-icons/ci';
+import { MdLogout } from 'react-icons/md';
 
 const Navbar = () => {
 
@@ -40,13 +42,13 @@ const Navbar = () => {
     return (
 
         <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10 text-[#1d1112] dark:text-white border-b dark:border-[#4b4949]'>
-            <div className="navbar w-[96%] max-w-screen-2xl mx-auto">
+            <div className="navbar w-[98%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 -ml-6"
+                                className="h-8 w-3 my-auto -ml-6"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -63,7 +65,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <h1 className="text-2xl md:text-4xl font-bold -ml-2">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
+                    <h1 className="text-2xl md:text-4xl font-bold -ml-4">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-base font-medium px-1">
@@ -101,8 +103,8 @@ const Navbar = () => {
                                         tabIndex={0}
                                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 dark:bg-[#333232] shadow">
                                         <li><h5 className='font-semibold'>{user?.displayName}</h5></li>
-                                        <li><a>Settings</a></li>
-                                        <li><a onClick={handleSignOut}>Logout</a></li>
+                                        <li><a className='flex justify-between'>Update Profile<CiEdit className='text-end font-bold' /></a></li>
+                                        <li><a onClick={handleSignOut} className='flex justify-between'>Logout <MdLogout className='text-end'/></a></li>
                                     </ul>
                                 </div>
 
@@ -111,8 +113,8 @@ const Navbar = () => {
                             </div>
                             :
                             <div className='text-white'>
-                                <Link to='/auth' className="py-2 px-4 border-r dark:border-[#535353] bg-[#d3b6b9] dark:bg-[#b88287]  rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
-                                <Link to='/auth/register' className="py-2 px-4  bg-[#d3b6b9] dark:bg-[#b88287] rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
+                                <Link to='/auth' className="p-1 px-3 md:py-2 md:px-4 border-r dark:border-[#535353] bg-[#d3b6b9] dark:bg-[#b88287]  rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-l-2xl rounded-r-none">Login</Link>
+                                <Link to='/auth/register' className="p-1 px-3 md:py-2 md:px-4  bg-[#d3b6b9] dark:bg-[#b88287] rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-r-2xl rounded-l-none">Register</Link>
                             </div>
                     }
 
@@ -125,7 +127,7 @@ const Navbar = () => {
 
                         {/* sun icon */}
                         <svg
-                            className="swap-on h-10 w-10 fill-current"
+                            className="swap-on h-7 w-7 md:h-10 md:w-10 mx-auto my-auto  fill-current"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
                             <path
@@ -134,7 +136,7 @@ const Navbar = () => {
 
                         {/* moon icon */}
                         <svg
-                            className="swap-off h-10 w-10 fill-current"
+                            className="swap-off h-7 w-7 md:h-10 md:w-10 mx-auto my-auto fill-current"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
                             <path

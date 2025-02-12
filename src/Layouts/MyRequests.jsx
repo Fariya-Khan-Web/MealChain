@@ -21,7 +21,7 @@ const MyRequests = () => {
     }, [user])
 
     return (
-        <div className='min-h-[calc(100vh-290px)] py-16'>
+        <div className='min-h-[calc(100vh-290px)] py-16 w-[94%] mx-auto'>
             <h1 className='text-3xl font-semibold max-w-screen-xl mx-auto'>Foods You Requested For-</h1>
             <div className="overflow-x-auto max-w-screen-xl mx-auto my-10">
                 <table className="table">

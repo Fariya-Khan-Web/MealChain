@@ -12,7 +12,7 @@ const HowItWorks = () => {
             <p className='md:w-[80%] lg:w-[60%] my-5 text-gray-600 dark:text-white'>Discover the most generous food donations from our community! This section highlights the top contributions with the largest quantities, ensuring plenty for those in need.</p>
             <div className='max-w-screen-xl mx-auto grid gap-5 md:grid-cols-2 lg:grid-cols-4 pt-9'>
                
-                <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
+                <div className='border bg-white dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
                         <MdOutlineAccountBox className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
@@ -21,7 +21,7 @@ const HowItWorks = () => {
                 </div>
                 
                 
-                <div className=' border dark:bg-[#333232] dark:border-none  rounded-md shadow-xl p-5 text-center'>
+                <div className=' border bg-white dark:bg-[#333232] dark:border-none  rounded-md shadow-xl p-5 text-center'>
                     <div>
                         <BiDonateHeart className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
@@ -30,7 +30,7 @@ const HowItWorks = () => {
                 </div>
                 
                 
-                <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
+                <div className='border bg-white dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
                         <VscGitPullRequestClosed  className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>
@@ -39,7 +39,7 @@ const HowItWorks = () => {
                 </div>
                 
                 
-                <div className='border dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
+                <div className='border bg-white dark:bg-[#333232] dark:border-none rounded-md shadow-lg p-3 text-center'>
                     <div>
                         <RiUserCommunityLine className='text-[#b6dbdb] dark:text-[#9bc5c5] my-2 text-6xl mx-auto' />
                     </div>

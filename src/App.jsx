@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div 
-    className='dark:bg-[#221e1e] dark:text-white'
+    className='dark:bg-[#221e1e] dark:text-[#f3ebeb] bg-[#f8f7f7]'
     >
       <Navbar/>
       <Outlet/>

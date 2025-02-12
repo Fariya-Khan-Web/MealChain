@@ -31,7 +31,7 @@ const Featured = () => {
             </div>
 
             <div className='lg:flex justify-between items-center'>
-                <h3 className='text-xl font-semibold p-2'>This section on features 6 foods of most quantity. click here to see all available foods-</h3>
+                <h3 className='text-xl font-medium md:font-semibold p-2'>This section features 6 foods of most quantity. click here to see all available foods-</h3>
                 <Link to={'/foods'} className='btn border-none p-2 bg-[#d3b6b9] dark:bg-[#b88287] w-1/3 text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl'>See All</Link>
             </div>
 

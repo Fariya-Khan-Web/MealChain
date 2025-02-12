@@ -59,7 +59,7 @@ const AddFood = () => {
 
 
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen py-10">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
                     <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Spread the Love!</span></h1>
@@ -67,7 +67,7 @@ const AddFood = () => {
                         Contribute to a better tomorrow by sharing surplus food. Fill in the details, including food name, quantity, location, and any special instructions. Your donation can bring hope and a meal to someone in need
                     </p>
                 </div>
-                <div className="card bg-base-100 w-full max-w-2xl rounded-lg shrink-0 shadow-2xl bg-[#faf1e7]/50 dark:bg-[#333232]">
+                <div className="card w-full max-w-2xl rounded-lg shrink-0 shadow-2xl bg-[#faf1e7]/50 dark:bg-[#333232]">
                     <form onSubmit={handleSubmit} className="card-body">
 
                         {/* food name */}

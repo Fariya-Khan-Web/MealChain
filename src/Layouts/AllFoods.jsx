@@ -53,9 +53,9 @@ const AllFoods = () => {
 
 
     return (
-        <div className='py-24 min-h-screen'>
+        <div className='py-10 md:py-24 min-h-screen'>
             <h1 className='text-3xl md:text-5xl font-bold text-center'>Fresh Foods,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Ready for Pickup</span></h1>
-            <p className='w-[94%] md:w-[60%] my-4 mx-auto text-center'>Discover a variety of freshly donated meals and ingredients, ready for pickup in your area. Browse the available options and be part of a community that cares and shares.</p>
+            <p className='w-[94%] md:w-[55%] my-4 mx-auto text-center'>Discover a variety of freshly donated meals and ingredients, ready for pickup in your area. Browse the available options and be part of a community that cares and shares.</p>
 
             <div className='flex flex-wrap justify-end gap-3 max-w-screen-xl w-[94%] mx-auto my-10'>
 

@@ -77,7 +77,7 @@ const Register = () => {
 
     return (
         <div className='flex justify-center items-center'>
-            <div className="relative w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-20 py-6 bg-[#faf1e7]/50 dark:bg-[#333232]">
+            <div className="relative w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-16 py-6 bg-[#faf1e7]/50 dark:bg-[#333232]">
                 <h1 className='font-semibold text-3xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Create your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
