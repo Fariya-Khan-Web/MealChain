@@ -1,4 +1,4 @@
-# MealChain | [Live link](https://mealchain-39b5c.web.app)
+# [MealChain](https://mealchain-39b5c.web.app)
 
 KindBites is a platform dedicated to reducing food waste and fostering community connections by enabling users to donate surplus food to those in need. Whether you're a donor looking to share extra meals or someone seeking support, KindBites provides a seamless, user-friendly experience for food sharing.
 
@@ -33,20 +33,3 @@ KindBites is a platform dedicated to reducing food waste and fostering community
 
 5. **Request food** 
    Users can request for foods added by other users and thus build a chain
-
-<!-- 
---text: #060505;
---background: #fcfbfb;
---primary: #9c6469;
---secondary: #d3b6b9;
---accent: #c07f86;
- -->
-
-
- <!-- 
- --text: #180e0f;
---background: #faf7f7;
---primary: #d3b6b9;
---secondary: #ccbda8;
---accent: #d3b6b9;
-  -->
