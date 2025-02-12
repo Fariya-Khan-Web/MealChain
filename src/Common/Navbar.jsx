@@ -36,12 +36,13 @@ const Navbar = () => {
                     <li><Link to={'/myrequests'}>My Food Request</Link></li>
                 </>
             }
+            <li><Link to={'/contact'}>Contact Us</Link></li>
         </>
 
 
     return (
 
-        <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10 text-[#1d1112] dark:text-white border-b dark:border-[#4b4949]'>
+        <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10  dark:text-white border-b dark:border-[#4b4949]'>
             <div className="navbar w-[98%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -65,7 +66,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <h1 className="text-2xl md:text-4xl font-bold -ml-4">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
+                    <h1 className="text-2xl md:text-4xl font-bold -ml-4 md:ml-0">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-base font-medium px-1">

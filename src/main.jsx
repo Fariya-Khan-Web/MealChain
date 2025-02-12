@@ -27,11 +27,14 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Update from './Layouts/Update.jsx';
+import Contact from './Layouts/Contact.jsx';
+import ErrorPage from './Layouts/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: '/',
@@ -74,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: '/myrequests',
         element: <PrivateRoute><MyRequests /></PrivateRoute>
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       },
     ]
   },
