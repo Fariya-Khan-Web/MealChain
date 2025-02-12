@@ -53,7 +53,7 @@ const Login = () => {
     return (
         <div className='flex justify-center items-center'>
             <div className="relative w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg my-28 py-6 bg-[#faf1e7]/50 dark:bg-[#333232]">
-                <h1 className='font-semibold text-2xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Login your account</h1>
+                <h1 className='font-semibold text-3xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Login your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
 
@@ -61,14 +61,14 @@ const Login = () => {
                         <label className="label">
                             <span className="   ">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                        <input type="email" name='email' placeholder="email" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                     </div>
 
                     <div className="form-control">
                         <label className="label">
                             <span className="">Password</span>
                         </label>
-                        <input type={show ? `text` : `password`} name='password' placeholder="password" className="input input-bordered" required />
+                        <input type={show ? `text` : `password`} name='password' placeholder="password" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
 
                         <label className="label">
                             <a href="#" className=" link link-hover">Forgot password?</a>

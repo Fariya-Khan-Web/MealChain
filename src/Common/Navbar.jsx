@@ -39,14 +39,14 @@ const Navbar = () => {
 
     return (
 
-        <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10 text-[#1d1112] dark:text-white border-b dark:border-[#535353]'>
+        <div className=' bg-[#faf1e7] dark:bg-[#333232] sticky top-0 z-10 text-[#1d1112] dark:text-white border-b dark:border-[#4b4949]'>
             <div className="navbar w-[96%] max-w-screen-2xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 "
+                                className="h-4 w-4 -ml-6"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -59,11 +59,11 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-md dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-md dropdown-content bg-[#faf1e7] dark:bg-[#333232] rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             {links}
                         </ul>
                     </div>
-                    <h1 className="text-4xl font-bold -ml-2">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
+                    <h1 className="text-2xl md:text-4xl font-bold -ml-2">Meal<span className='text-[#d3b6b9] dark:text-[#b88287]'>Chain</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal text-base font-medium px-1">
@@ -74,18 +74,40 @@ const Navbar = () => {
                     {
                         user ?
                             <div className='flex'>
-                                <div className='flex group relative'>
+
+
+                                {/* <div className='flex group relative'>
 
                                     <div className="btn btn-ghost btn-circle avatar">
                                         <img className='w-full rounded-full'
                                             alt="avatar"
                                             src={user?.photoURL} />
                                     </div>
+                                    
 
-                                    <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border border-gray-700 text-xl font-semibold rounded opacity-0 group-hover:opacity-100'>{user?.displayName}</div>
+                                    <div className='p-2 px-4 absolute top-12 -left-4 z-20 bg-white border dark:border-[#535353] dark:bg-[#535353] text-sm font-semibold rounded opacity-0 group-hover:opacity-100'>{user?.displayName}</div>
 
+                                </div> */}
+
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img
+                                                alt="Tailwind CSS Navbar component"
+                                                src={user?.photoURL}/>
+                                        </div>
+                                    </div>
+                                    <ul
+                                        tabIndex={0}
+                                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 dark:bg-[#333232] shadow">
+                                        <li><h5 className='font-semibold'>{user?.displayName}</h5></li>
+                                        <li><a>Settings</a></li>
+                                        <li><a onClick={handleSignOut}>Logout</a></li>
+                                    </ul>
                                 </div>
-                                <Link onClick={handleSignOut} className="p-3 mx-2 px-4 bg-[#d3b6b9] dark:bg-[#b88287] text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Sign Out</Link>
+
+{/* 
+                                <Link onClick={handleSignOut} className="p-3 mx-2 md:px-4 bg-[#d3b6b9] dark:bg-[#b88287] text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Sign Out</Link> */}
                             </div>
                             :
                             <div className='text-white'>
@@ -97,7 +119,7 @@ const Navbar = () => {
 
                     {/* theme toggle */}
 
-                    <label className="swap swap-rotate mx-2 text-[#b6dbdb] dark:text-[#9bc5c5]">
+                    <label className="swap swap-rotate ml-1 text-[#b6dbdb] dark:text-[#9bc5c5]">
                         {/* this hidden checkbox controls the state */}
                         <input type="checkbox" onClick={handleTheme} />
 

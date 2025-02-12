@@ -59,7 +59,7 @@ const AddFood = () => {
 
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
                     <h1 className="text-3xl lg:text-5xl font-bold">Share a Meal,<span className='text-[#d3b6b9] dark:text-[#b88287]'> Spread the Love!</span></h1>
@@ -67,31 +67,31 @@ const AddFood = () => {
                         Contribute to a better tomorrow by sharing surplus food. Fill in the details, including food name, quantity, location, and any special instructions. Your donation can bring hope and a meal to someone in need
                     </p>
                 </div>
-                <div className="card bg-base-100 w-full max-w-2xl rounded-lg shrink-0 shadow-2xl">
+                <div className="card bg-base-100 w-full max-w-2xl rounded-lg shrink-0 shadow-2xl bg-[#faf1e7]/50 dark:bg-[#333232]">
                     <form onSubmit={handleSubmit} className="card-body">
 
                         {/* food name */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Food Name</span>
+                                <span className="">Food Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Enter food name" className="input input-bordered" required />
+                            <input type="text" name='name' placeholder="Enter food name" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                         </div>
 
                         {/* food image */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Food Image</span>
+                                <span className="">Food Image</span>
                             </label>
-                            <input type="url" name='photo' placeholder="Enter photo url" className="input input-bordered" required />
+                            <input type="url" name='photo' placeholder="Enter photo url" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                         </div>
 
                         {/* location */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Pickup Location</span>
+                                <span className="">Pickup Location</span>
                             </label>
-                            <input type="text" name='location' placeholder="Enter picup location" className="input input-bordered" required />
+                            <input type="text" name='location' placeholder="Enter picup location" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                         </div>
 
                         <div className='grid md:grid-cols-2 gap-3'>
@@ -99,19 +99,19 @@ const AddFood = () => {
                             {/* quantity */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Food Quantity</span>
+                                    <span className="">Food Quantity</span>
                                 </label>
-                                <input type="number" name='quantity' placeholder="Enter food quantity" className="input input-bordered" required />
+                                <input type="number" name='quantity' placeholder="Enter food quantity" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                             </div>
 
                             {/* date */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Expired Date</span>
+                                    <span className="">Expired Date</span>
                                 </label>
                                 {/* <input type="date" name='exdate' placeholder="Enter expired date" className="input input-bordered" required /> */}
                                 <DatePicker
-                                    className='border p-2 rounded-lg w-full input input-bordered'
+                                    className='border p-2 rounded-lg w-full input input-bordered dark:border-[#4b4949] dark:bg-[#333232]'
                                     selected={startDate}
                                     onChange={date => setStartDate(date)}
                                 />
@@ -124,13 +124,13 @@ const AddFood = () => {
                             <label className="label">
                                 <span className="label-text">Additional Notes</span>
                             </label>
-                            <input type="text" name='note' placeholder="Enter a note" className="input input-bordered" required />
+                            <input type="text" name='note' placeholder="Enter a note" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                         </div>
 
 
 
                         <div className="form-control mt-6">
-                            <button className="btn  bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Add food</button>
+                            <button className="btn border-none bg-[#d3b6b9] dark:bg-[#b88287] font-semibold text-lg text-white rounded-md hover:bg-[#d3b6b9] dark:bg-[#b88287]/80 hover:rounded-2xl">Add food</button>
                         </div>
                     </form>
                 </div>

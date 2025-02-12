@@ -21,13 +21,13 @@ const MyRequests = () => {
     }, [user])
 
     return (
-        <div className='min-h-[calc(100vh-290px)] bg-base-200 py-16'>
+        <div className='min-h-[calc(100vh-290px)] py-16'>
             <h1 className='text-3xl font-semibold max-w-screen-xl mx-auto'>Foods You Requested For-</h1>
             <div className="overflow-x-auto max-w-screen-xl mx-auto my-10">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='dark:text-white dark:border-[#535353]'>
                             <th>
 
                             </th>
@@ -48,7 +48,7 @@ const MyRequests = () => {
                         {
                             requests?.map((food, index) => (
 
-                                <tr key={food?._id}>
+                                <tr key={food?._id} className='dark:border-[#535353]'>
                                     <th>{index + 1}</th>
 
                                     <td>

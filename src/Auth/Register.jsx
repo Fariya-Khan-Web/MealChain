@@ -78,7 +78,7 @@ const Register = () => {
     return (
         <div className='flex justify-center items-center'>
             <div className="relative w-[94%] max-w-lg shrink-0 shadow-2xl rounded-lg m-20 py-6 bg-[#faf1e7]/50 dark:bg-[#333232]">
-                <h1 className='font-semibold text-2xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Create your account</h1>
+                <h1 className='font-semibold text-3xl text-[#d3b6b9] dark:text-[#b88287] mx-auto mt-6 text-center'>Create your account</h1>
                 <hr className=' w-10/12 mx-auto mt-6' />
                 <form onSubmit={handleSubmit} className="card-body">
 
@@ -87,7 +87,7 @@ const Register = () => {
                         <label className="label">
                             <span className="">Name</span>
                         </label>
-                        <input type="text" name='name' placeholder="Enter your name" className="input input-bordered" required />
+                        <input type="text" name='name' placeholder="Enter your name" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                     </div>
 
 
@@ -95,7 +95,7 @@ const Register = () => {
                         <label className="label">
                             <span className="">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="Enter your email" className="input input-bordered" required />
+                        <input type="email" name='email' placeholder="Enter your email" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                     </div>
 
 
@@ -103,7 +103,7 @@ const Register = () => {
                         <label className="label">
                             <span className="">Photo</span>
                         </label>
-                        <input type="url" name='photo' placeholder="Enter photo url" className="input input-bordered" required />
+                        <input type="url" name='photo' placeholder="Enter photo url" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                     </div>
 
 
@@ -111,7 +111,7 @@ const Register = () => {
                         <label className="label">
                             <span className="">Password</span>
                         </label>
-                        <input type={show ? `text` : `password`} name='password' placeholder="Enter a password" className="input input-bordered" required />
+                        <input type={show ? `text` : `password`} name='password' placeholder="Enter a password" className="input input-bordered dark:border-[#4b4949] dark:bg-[#333232]" required />
                     </div>
 
 

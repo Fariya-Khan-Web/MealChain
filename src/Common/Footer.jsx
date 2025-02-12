@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='border-t bg-[#fcf6f0] dark:bg-[#333232] dark:border-[#535353] bg-opacity-70'>
+        <div className='border-t bg-[#fcf6f0] dark:bg-[#333232] dark:border-[#4b4949] bg-opacity-70'>
             <footer className="footer text-base-content dark:text-white dark:font-medium p-10 max-w-screen-2xl mx-auto">
                 <nav>
                     <h6 className="text-xl dark:text-white font-bold my-3">Services</h6>
